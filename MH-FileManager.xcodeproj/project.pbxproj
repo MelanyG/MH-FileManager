@@ -8,20 +8,54 @@
 
 /* Begin PBXBuildFile section */
 		396F6E511EA8BD9700EC4F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */; };
-		396F6E531EA8BD9700EC4F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E521EA8BD9700EC4F69 /* ViewController.swift */; };
-		396F6E561EA8BD9700EC4F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E541EA8BD9700EC4F69 /* Main.storyboard */; };
 		396F6E581EA8BD9700EC4F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E571EA8BD9700EC4F69 /* Assets.xcassets */; };
 		396F6E5B1EA8BD9700EC4F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E591EA8BD9700EC4F69 /* LaunchScreen.storyboard */; };
+		396F6E631EA8BDD400EC4F69 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E621EA8BDD400EC4F69 /* MainVC.swift */; };
+		396F6E651EA8BDF800EC4F69 /* MainVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */; };
+		396F6E671EA8BE1000EC4F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E661EA8BE1000EC4F69 /* Main.storyboard */; };
+		396F6E6B1EA8C5E800EC4F69 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */; };
+		396F6E6D1EA8C60200EC4F69 /* MainInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */; };
+		396F6E701EA8C64000EC4F69 /* MainWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */; };
+		396F6E721EA8C65900EC4F69 /* MainWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */; };
+		396F6E751EA8CE1B00EC4F69 /* RootWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */; };
+		396F6E771EA8D58000EC4F69 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E761EA8D58000EC4F69 /* NetworkManager.swift */; };
+		396F6E7A1EA8D76500EC4F69 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E791EA8D76500EC4F69 /* UserModel.swift */; };
+		396F6E9B1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */; };
+		396F6E9D1EA8F64700EC4F69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */; };
+		396F6E9F1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */; };
+		396F6EA11EA8F67A00EC4F69 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */; };
+		396F6EA31EA8F68D00EC4F69 /* LoginInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */; };
+		396F6EA51EA8F6A600EC4F69 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA41EA8F6A600EC4F69 /* LoginWireFrame.swift */; };
+		396F6EA71EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */; };
+		396F6EAD1EA8F72200EC4F69 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6EAC1EA8F72200EC4F69 /* Login.storyboard */; };
+		396F6EAF1EA8FADA00EC4F69 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		396F6E4D1EA8BD9700EC4F69 /* MH-FileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MH-FileManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		396F6E521EA8BD9700EC4F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		396F6E551EA8BD9700EC4F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		396F6E571EA8BD9700EC4F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		396F6E5A1EA8BD9700EC4F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		396F6E5C1EA8BD9700EC4F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396F6E621EA8BDD400EC4F69 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCProtocol.swift; sourceTree = "<group>"; };
+		396F6E661EA8BE1000EC4F69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractorProtocol.swift; sourceTree = "<group>"; };
+		396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrame.swift; sourceTree = "<group>"; };
+		396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrameProtocol.swift; sourceTree = "<group>"; };
+		396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireFrame.swift; sourceTree = "<group>"; };
+		396F6E761EA8D58000EC4F69 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		396F6E791EA8D76500EC4F69 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
+		396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorProtocol.swift; sourceTree = "<group>"; };
+		396F6EA41EA8F6A600EC4F69 /* LoginWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
+		396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrameProtocol.swift; sourceTree = "<group>"; };
+		396F6EAC1EA8F72200EC4F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +88,111 @@
 		396F6E4F1EA8BD9700EC4F69 /* MH-FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				396F6EA81EA8F6C000EC4F69 /* Login */,
+				396F6E681EA8C4EB00EC4F69 /* Main */,
 				396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */,
-				396F6E521EA8BD9700EC4F69 /* ViewController.swift */,
-				396F6E541EA8BD9700EC4F69 /* Main.storyboard */,
+				396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */,
+				396F6E781EA8D73D00EC4F69 /* Common */,
 				396F6E571EA8BD9700EC4F69 /* Assets.xcassets */,
 				396F6E591EA8BD9700EC4F69 /* LaunchScreen.storyboard */,
 				396F6E5C1EA8BD9700EC4F69 /* Info.plist */,
 			);
 			path = "MH-FileManager";
+			sourceTree = "<group>";
+		};
+		396F6E681EA8C4EB00EC4F69 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E6E1EA8C60A00EC4F69 /* BusinessLogic */,
+				396F6E691EA8C4FC00EC4F69 /* UI */,
+				396F6E731EA8C65E00EC4F69 /* Routing */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		396F6E691EA8C4FC00EC4F69 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E621EA8BDD400EC4F69 /* MainVC.swift */,
+				396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */,
+				396F6E661EA8BE1000EC4F69 /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		396F6E6E1EA8C60A00EC4F69 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */,
+				396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		396F6E731EA8C65E00EC4F69 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */,
+				396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */,
+			);
+			name = Routing;
+			sourceTree = "<group>";
+		};
+		396F6E781EA8D73D00EC4F69 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E761EA8D58000EC4F69 /* NetworkManager.swift */,
+				396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */,
+				396F6E991EA8D7B000EC4F69 /* Entities */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		396F6E991EA8D7B000EC4F69 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E791EA8D76500EC4F69 /* UserModel.swift */,
+				396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		396F6EA81EA8F6C000EC4F69 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				396F6EA91EA8F6CF00EC4F69 /* UI */,
+				396F6EAA1EA8F6DD00EC4F69 /* BusinessLogic */,
+				396F6EAB1EA8F6EB00EC4F69 /* Routing */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		396F6EA91EA8F6CF00EC4F69 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */,
+				396F6EAC1EA8F72200EC4F69 /* Login.storyboard */,
+				396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		396F6EAA1EA8F6DD00EC4F69 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */,
+				396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		396F6EAB1EA8F6EB00EC4F69 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				396F6EA41EA8F6A600EC4F69 /* LoginWireFrame.swift */,
+				396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */,
+			);
+			name = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396F6EAD1EA8F72200EC4F69 /* Login.storyboard in Resources */,
+				396F6E671EA8BE1000EC4F69 /* Main.storyboard in Resources */,
 				396F6E5B1EA8BD9700EC4F69 /* LaunchScreen.storyboard in Resources */,
 				396F6E581EA8BD9700EC4F69 /* Assets.xcassets in Resources */,
-				396F6E561EA8BD9700EC4F69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +268,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396F6E531EA8BD9700EC4F69 /* ViewController.swift in Sources */,
+				396F6E9D1EA8F64700EC4F69 /* LoginViewController.swift in Sources */,
+				396F6E9B1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift in Sources */,
+				396F6EA11EA8F67A00EC4F69 /* LoginInteractor.swift in Sources */,
+				396F6E771EA8D58000EC4F69 /* NetworkManager.swift in Sources */,
+				396F6E9F1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift in Sources */,
+				396F6EA31EA8F68D00EC4F69 /* LoginInteractorProtocol.swift in Sources */,
+				396F6E6D1EA8C60200EC4F69 /* MainInteractorProtocol.swift in Sources */,
+				396F6E6B1EA8C5E800EC4F69 /* MainInteractor.swift in Sources */,
+				396F6E651EA8BDF800EC4F69 /* MainVCProtocol.swift in Sources */,
+				396F6E631EA8BDD400EC4F69 /* MainVC.swift in Sources */,
+				396F6EA51EA8F6A600EC4F69 /* LoginWireFrame.swift in Sources */,
+				396F6EAF1EA8FADA00EC4F69 /* AccessToken.swift in Sources */,
+				396F6E751EA8CE1B00EC4F69 /* RootWireFrame.swift in Sources */,
+				396F6EA71EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift in Sources */,
+				396F6E721EA8C65900EC4F69 /* MainWireFrameProtocol.swift in Sources */,
+				396F6E701EA8C64000EC4F69 /* MainWireFrame.swift in Sources */,
+				396F6E7A1EA8D76500EC4F69 /* UserModel.swift in Sources */,
 				396F6E511EA8BD9700EC4F69 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +292,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		396F6E541EA8BD9700EC4F69 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				396F6E551EA8BD9700EC4F69 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		396F6E591EA8BD9700EC4F69 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

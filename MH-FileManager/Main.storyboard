@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="QLM-Tl-HDW">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" id="uHA-2x-kp2" customClass="MainVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RIz-gv-0AT"/>
+                        <viewControllerLayoutGuide type="bottom" id="D40-S4-YSm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iaO-ib-lpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TbZ-Pu-qB3">
+                                <rect key="frame" x="82" y="194" width="210" height="30"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rQm-lb-HzU">
+                                <rect key="frame" x="82" y="273" width="210" height="30"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone or e-mail " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydk-P7-6jA">
+                                <rect key="frame" x="82" y="170" width="210" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dW8-Zo-Ibw"/>
+                                    <constraint firstAttribute="width" constant="210" id="jKm-nw-2Xp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="15"/>
+                                <color key="textColor" red="0.396078431372549" green="0.396078431372549" blue="0.396078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag1-Im-TMR">
+                                <rect key="frame" x="82" y="249" width="210" height="21"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="15"/>
+                                <color key="textColor" red="0.39607843139999999" green="0.39607843139999999" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-xx-yve">
+                                <rect key="frame" x="82" y="333" width="210" height="35"/>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.49803921568627452" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ld8-0E-VVs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="15"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInPressed:" destination="uHA-2x-kp2" eventType="touchUpInside" id="Cgd-1Q-Pql"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ag1-Im-TMR" firstAttribute="top" secondItem="TbZ-Pu-qB3" secondAttribute="bottom" constant="25" id="1Oi-1D-oHa"/>
+                            <constraint firstItem="Ydk-P7-6jA" firstAttribute="centerX" secondItem="iaO-ib-lpg" secondAttribute="centerX" id="4YX-ev-pEn"/>
+                            <constraint firstItem="vAg-xx-yve" firstAttribute="centerX" secondItem="iaO-ib-lpg" secondAttribute="centerX" id="AlD-cR-CgP"/>
+                            <constraint firstItem="TbZ-Pu-qB3" firstAttribute="centerX" secondItem="iaO-ib-lpg" secondAttribute="centerX" id="IWT-S9-adk"/>
+                            <constraint firstItem="vAg-xx-yve" firstAttribute="top" secondItem="rQm-lb-HzU" secondAttribute="bottom" constant="30" id="X23-ta-kMk"/>
+                            <constraint firstItem="ag1-Im-TMR" firstAttribute="centerX" secondItem="iaO-ib-lpg" secondAttribute="centerX" id="a14-Bd-o7C"/>
+                            <constraint firstItem="Ydk-P7-6jA" firstAttribute="top" secondItem="RIz-gv-0AT" secondAttribute="bottom" constant="150" id="gqF-FK-CgN"/>
+                            <constraint firstItem="rQm-lb-HzU" firstAttribute="top" secondItem="ag1-Im-TMR" secondAttribute="bottom" constant="3" id="nCs-s2-NIQ"/>
+                            <constraint firstItem="TbZ-Pu-qB3" firstAttribute="top" secondItem="Ydk-P7-6jA" secondAttribute="bottom" constant="3" id="obD-Wz-PYs"/>
+                            <constraint firstItem="rQm-lb-HzU" firstAttribute="width" secondItem="Ydk-P7-6jA" secondAttribute="width" id="ptF-AV-Xjo"/>
+                            <constraint firstItem="ag1-Im-TMR" firstAttribute="height" secondItem="Ydk-P7-6jA" secondAttribute="height" id="qsz-7S-Oyq"/>
+                            <constraint firstItem="vAg-xx-yve" firstAttribute="width" secondItem="Ydk-P7-6jA" secondAttribute="width" id="qvu-kB-AYj"/>
+                            <constraint firstItem="TbZ-Pu-qB3" firstAttribute="width" secondItem="Ydk-P7-6jA" secondAttribute="width" id="r19-sf-muT"/>
+                            <constraint firstItem="ag1-Im-TMR" firstAttribute="width" secondItem="Ydk-P7-6jA" secondAttribute="width" id="xGb-IS-swQ"/>
+                            <constraint firstItem="rQm-lb-HzU" firstAttribute="centerX" secondItem="iaO-ib-lpg" secondAttribute="centerX" id="zXG-XK-jFP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="TbZ-Pu-qB3" id="w5M-0y-PQC"/>
+                        <outlet property="passwordTextField" destination="rQm-lb-HzU" id="1BJ-kK-AbH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gn-vQ-eip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278" y="129"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="k9U-y3-W0D">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="337-si-nRf" customClass="LoginViewController" customModule="MH_FileManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6tc-xQ-lYp"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aas-Yw-ZYy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRG-Fz-6Dt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-rh-iIJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="337-si-nRf" id="Ini-jA-bN7"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oNd-Hx-zt5">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fd5-rh-iIJ" firstAttribute="top" secondItem="6tc-xQ-lYp" secondAttribute="bottom" id="2Gl-Hr-9LE"/>
+                            <constraint firstItem="Fd5-rh-iIJ" firstAttribute="leading" secondItem="cRG-Fz-6Dt" secondAttribute="leading" id="Ib1-ja-t0y"/>
+                            <constraint firstAttribute="trailing" secondItem="Fd5-rh-iIJ" secondAttribute="trailing" id="Lgk-rh-jkQ"/>
+                            <constraint firstItem="oNd-Hx-zt5" firstAttribute="centerX" secondItem="cRG-Fz-6Dt" secondAttribute="centerX" id="Ngu-Vb-V7c"/>
+                            <constraint firstItem="Aas-Yw-ZYy" firstAttribute="top" secondItem="Fd5-rh-iIJ" secondAttribute="bottom" id="q4d-E4-QsG"/>
+                            <constraint firstItem="oNd-Hx-zt5" firstAttribute="centerY" secondItem="cRG-Fz-6Dt" secondAttribute="centerY" id="umf-fV-Ge0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="oNd-Hx-zt5" id="Ijq-MK-f2L"/>
+                        <outlet property="webView" destination="Fd5-rh-iIJ" id="ctS-V8-QOf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUF-8W-Cbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-537" y="143"/>
+        </scene>
+    </scenes>
+</document>
