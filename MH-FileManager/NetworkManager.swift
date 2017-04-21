@@ -6,9 +6,10 @@
 //  Copyright © 2017 Melaniia Hulianovych. All rights reserved.
 //
 
+import VK_ios_sdk
 import Foundation
 
-class NetworkManager: NetworkManagerProtocol {
+class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate, VKSdkUIDelegate {
     
     var token = AccessToken.shared
     var session: URLSession!
@@ -34,6 +35,12 @@ class NetworkManager: NetworkManagerProtocol {
         let instance = NetworkManager ()
         return instance
     }()
+    
+    func getTokenWithSDK() {
+        let sdkInstance = VKSdk.initialize(withAppId: Constant.APP_ID)
+        sdkInstance?.register(self as VKSdkDelegate)
+        sdkInstance?.uiDelegate = self as VKSdkUIDelegate
+    }
     
     func gotTokenUser(_ responce: String) {
         var query = responce
@@ -63,7 +70,7 @@ class NetworkManager: NetworkManagerProtocol {
     
     func getUserInfo(onCompletion:@escaping (_ result: UserModel) -> Void) {
         
-        let url = URL(string:"\(Constant.ApiVCMethods)account.getProfileInfo?&access_token=\(token.token!)&v=5.63")
+        let url = URL(string:"\(Constant.ApiVCMethods)users.get?fields=photo_100&access_token=\(token.token!)&v=5.63")
         var urlRequest = URLRequest.init(url: url!)
         
         urlRequest.httpMethod = "GET"
@@ -74,6 +81,7 @@ class NetworkManager: NetworkManagerProtocol {
             if let data = data {
                 do {
                     if let jsonResult = try JSONSerialization.jsonObject(with: data , options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+
                         print(jsonResult)
                         onCompletion(UserModel() )
                         
@@ -102,4 +110,64 @@ class NetworkManager: NetworkManagerProtocol {
         UserDefaults.standard.removeObject(forKey: "expires_in")
         UserDefaults.standard.removeObject(forKey: "user_id")
     }
+    
+    public func vkSdkShouldPresent(_ controller: UIViewController!) {
+    
+    }
+    
+    
+    /**
+     Calls when user must perform captcha-check.
+     If you implementing this method by yourself, call -[VKError answerCaptcha:] method for captchaError with user entered answer.
+     
+     @param captchaError error returned from API. You can load captcha image from <b>captchaImg</b> property.
+     */
+    public func vkSdkNeedCaptchaEnter(_ captchaError: VKError!){
+    
+    }
+    
+    /**
+     Notifies about authorization was completed, and returns authorization result with new token or error.
+     
+     @param result contains new token or error, retrieved after VK authorization.
+     */
+    public func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+    
+    }
+    
+    
+    /**
+     Notifies about access error. For example, this may occurs when user rejected app permissions through VK.com
+     */
+    public func vkSdkUserAuthorizationFailed() {
+    
+    }
+    
+    public func vkSdkAuthorizationStateUpdated(with result: VKAuthorizationResult!) {
+    
+    }
+    
+    
+    /**
+     Notifies about access token has been changed
+     
+     @param newToken new token for API requests
+     @param oldToken previous used token
+     */
+    public func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
+    
+    }
+    
+    
+    /**
+     Notifies about existing token has expired (by timeout). This may occurs if you requested token without no_https scope.
+     
+     @param expiredToken old token that has expired.
+     */
+    public func vkSdkTokenHasExpired(_ expiredToken: VKAccessToken!) {
+    
+    }
+    
 }
+
+

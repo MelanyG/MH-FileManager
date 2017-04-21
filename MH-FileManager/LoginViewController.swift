@@ -19,8 +19,9 @@ class LoginViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let request = URLRequest(url:(interactor.networkManager?.authUrl)!)
-        webView.delegate = self
-        webView.loadRequest(request)
+//        webView.delegate = self
+        interactor.networkManager?.getTokenWithSDK()
+//        webView.loadRequest(request)
         
     }
     

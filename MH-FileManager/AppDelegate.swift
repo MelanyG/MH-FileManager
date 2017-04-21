@@ -5,8 +5,10 @@
 //  Created by Melaniia Hulianovych on 4/20/17.
 //  Copyright © 2017 Melaniia Hulianovych. All rights reserved.
 //
-
+import VK_ios_sdk
 import UIKit
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return self.rootWireFrame.application(didFinishLaunchingWithOptions: launchOptions, window: self.window!)
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: NSString, sourceApplication annotation:Any)-> Bool {
+        VKSdk.processOpen(url as URL!, fromApplication: sourceApplication as String!)
 
+        return true
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
