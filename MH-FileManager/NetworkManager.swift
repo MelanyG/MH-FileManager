@@ -18,7 +18,7 @@ class NetworkManager: NetworkManagerProtocol {
         static var ProtectedKey: String = "oxCQHIyCimPnliE2BeBA"
         static var ServiceKey: String = "7918d7517918d7517918d751957943a278779187918d75121e0367aa4b51d8f96d14ec3"
         static var RedirectURL: String = "com.mel"
-        static var ApiVCMethods: String = "https://api.vk.com/"
+        static var ApiVCMethods: String = "https://api.vk.com/method/"
         static var AuthoriseURL: String = "https://oauth.vk.com/authorize?client_id=1&display=page&redirect_uri=http://example.com/callback&scope=friends&response_type=token&v=5.63&state=123456"
     }
     
@@ -63,7 +63,7 @@ class NetworkManager: NetworkManagerProtocol {
     
     func getUserInfo(onCompletion:@escaping (_ result: UserModel) -> Void) {
         
-        let url = URL(string:"\(Constant.ApiVCMethods)account.getProfileInfo?access_token=\(token.token!)")
+        let url = URL(string:"\(Constant.ApiVCMethods)account.getProfileInfo?&access_token=\(token.token!)&v=5.63")
         var urlRequest = URLRequest.init(url: url!)
         
         urlRequest.httpMethod = "GET"
