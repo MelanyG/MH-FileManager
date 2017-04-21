@@ -8,10 +8,15 @@
 
 import UIKit
 
-class MainWireFrame: NSObject, MainWireFrameProtocol {
+class MainWireFrame: MainWireFrameProtocol {
 
     var mainViewController: MainVC?
     var window: UIWindow?
+    var navigationController: UINavigationController?
+    
+    init() {
+        
+    }
     
     static let shared: MainWireFrame = {
         let instance = MainWireFrame ()
@@ -22,9 +27,28 @@ class MainWireFrame: NSObject, MainWireFrameProtocol {
 
         let mainVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as? MainVC
         mainViewController = mainVC
-        
-        self.window!.rootViewController = mainViewController
+        mainViewController?.interactor = MainInteractor()
+        mainViewController?.navigation = self
+        navigationController!.pushViewController(mainVC!, animated: true)
+        self.window!.rootViewController = navigationController
         self.window!.makeKeyAndVisible()
+    }
+    
+    func presentLoginScreenInWindow() {
+        
+        let logVC = UIStoryboard.init(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+  
+        logVC?.navigation = LoginWireFrame()
+        logVC?.navigation?.navigationController = navigationController
+        navigationController!.pushViewController(logVC!, animated: true)
+
+    }
+    
+    func popToLoginVCInWindow() {
+        _ = navigationController?.popViewController(animated: true)
+        
+        navigationController?.viewControllers = []
+        presentLoginScreenInWindow()
     }
     
 }

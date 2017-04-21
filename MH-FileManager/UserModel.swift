@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class UserModel {
+
+    var userID: String?
+    var userName: String?
+    
+    static let shared: UserModel = {
+        let instance = UserModel ()
+        return instance
+    }()
+    
+}

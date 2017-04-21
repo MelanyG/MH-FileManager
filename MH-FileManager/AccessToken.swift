@@ -12,7 +12,8 @@ import Foundation
 class AccessToken {
 
     var token: String?
-    var expiredDate: String?
+    var expiredDate: Date?
+    var userID: String?
 
     static let shared: AccessToken = {
         let instance = AccessToken ()
@@ -20,11 +21,24 @@ class AccessToken {
     }()
     
     func isValidToken() -> Bool {
-        if token != nil {
+        token = UserDefaults.standard.object(forKey: "acc_token") as? String
+        expiredDate = UserDefaults.standard.object(forKey: "expires_in") as? Date
+        userID = UserDefaults.standard.object(forKey: "user_id") as? String
+        if isValidExpirationDate() {
             return true
         }
         
         return false
     }
     
+    func isValidExpirationDate() -> Bool {
+    
+        guard let expD = expiredDate else {return false}
+        if expD as Date > Date() {
+            return true
+        } else {
+            return false
+        }
+        
+    }
 }

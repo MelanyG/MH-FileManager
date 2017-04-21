@@ -13,10 +13,12 @@ class MainVC: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var navigation: MainWireFrame?
+    var interactor: MainInteractor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureNavigationBar()
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +33,20 @@ class MainVC: UIViewController {
         
     }
 
+    func configureNavigationBar() {
+        navigationItem.hidesBackButton = true
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationController?.title = interactor?.getCurrentUserInfo()
+    }
+    
+    func signOut() {
+    
+        interactor?.makeSignOut()
+        navigation?.popToLoginVCInWindow()
+    }
+    
     /*
     // MARK: - Navigation
 

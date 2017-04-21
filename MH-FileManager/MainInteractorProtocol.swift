@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+
+protocol MainInteractorProtocol {
+
+    func makeSignOut()
+    
+}
