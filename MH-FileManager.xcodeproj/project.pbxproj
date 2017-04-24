@@ -29,6 +29,8 @@
 		396F6EA71EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */; };
 		396F6EAD1EA8F72200EC4F69 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6EAC1EA8F72200EC4F69 /* Login.storyboard */; };
 		396F6EAF1EA8FADA00EC4F69 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */; };
+		396F6EB11EAE396100EC4F69 /* UserNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EB01EAE396100EC4F69 /* UserNavBar.swift */; };
+		396F6EB31EAE3CFF00EC4F69 /* UIImageView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */; };
 		AFE35C3BE7D581385773D9DD /* Pods_MH_FileManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD453FF4766F7FE45882E5 /* Pods_MH_FileManager.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrameProtocol.swift; sourceTree = "<group>"; };
 		396F6EAC1EA8F72200EC4F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		396F6EB01EAE396100EC4F69 /* UserNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavBar.swift; sourceTree = "<group>"; };
+		396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loading.swift"; sourceTree = "<group>"; };
 		5BB849A4095FAEA058CE8669 /* Pods-MH-FileManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MH-FileManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MH-FileManager/Pods-MH-FileManager.release.xcconfig"; sourceTree = "<group>"; };
 		65B38251D46965F6E611601E /* Pods-MH-FileManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MH-FileManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MH-FileManager/Pods-MH-FileManager.debug.xcconfig"; sourceTree = "<group>"; };
 		6DCD453FF4766F7FE45882E5 /* Pods_MH_FileManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MH_FileManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +160,8 @@
 		396F6E781EA8D73D00EC4F69 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				396F6EB01EAE396100EC4F69 /* UserNavBar.swift */,
+				396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */,
 				396F6E761EA8D58000EC4F69 /* NetworkManager.swift */,
 				396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */,
 				396F6E991EA8D7B000EC4F69 /* Entities */,
@@ -349,8 +355,10 @@
 				396F6E771EA8D58000EC4F69 /* NetworkManager.swift in Sources */,
 				362DD9E11EA9604B005F4051 /* LoginWireFrame.swift in Sources */,
 				396F6E9F1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift in Sources */,
+				396F6EB11EAE396100EC4F69 /* UserNavBar.swift in Sources */,
 				396F6EA31EA8F68D00EC4F69 /* LoginInteractorProtocol.swift in Sources */,
 				396F6E6D1EA8C60200EC4F69 /* MainInteractorProtocol.swift in Sources */,
+				396F6EB31EAE3CFF00EC4F69 /* UIImageView+Loading.swift in Sources */,
 				396F6E6B1EA8C5E800EC4F69 /* MainInteractor.swift in Sources */,
 				396F6E651EA8BDF800EC4F69 /* MainVCProtocol.swift in Sources */,
 				396F6E631EA8BDD400EC4F69 /* MainVC.swift in Sources */,

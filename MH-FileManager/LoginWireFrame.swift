@@ -20,7 +20,6 @@ class LoginWireFrame:LoginWireFrameProtocol {
     
     func dismissLoginViewController() {
     _ = navigationController?.popViewController(animated: true)
-
         navigationController?.viewControllers = []
         presentMainScreen()
     }
@@ -46,4 +45,7 @@ class LoginWireFrame:LoginWireFrameProtocol {
         self.window!.makeKeyAndVisible()
     }
     
+    func presentAuthorisationController(_ controller:UIViewController!) {
+    
+    }
 }

@@ -6,55 +6,65 @@
 //  Copyright © 2017 Melaniia Hulianovych. All rights reserved.
 //
 
+import VK_ios_sdk
 import UIKit
 
-class MainVC: UIViewController {
-
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+class MainVC: UIViewController, VKSdkUIDelegate {
     
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        interactor?.networkManager.sdkInstance?.uiDelegate = self as VKSdkUIDelegate
+        interactor?.networkManager.getTokenWithSDK() {
+            (error: Error?) in
+            if let erro = error {
+                let alert = UIAlertController(title: "Alert", message: erro.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         configureNavigationBar()
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func signInPressed(_ sender: Any) {
         
         
     }
-
+    
     func configureNavigationBar() {
-        navigationItem.hidesBackButton = true
-
+        interactor?.networkManager.userInfo.getUserdataFromDefaults()
+        let navbar = navigation?.navigationController?.navigationBar as! UserNavBar
+        
+        navbar.setNavigationBar(withImage: interactor?.networkManager.userInfo.photo_50, username: interactor?.networkManager.userInfo.userFirstName, userLastName: interactor?.networkManager.userInfo.userLastName, userNickname: interactor?.networkManager.userInfo.userNickName)
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
         navigationItem.rightBarButtonItem?.tintColor = UIColor.white
-        navigationController?.title = interactor?.getCurrentUserInfo()
+        navigationController?.title = interactor?.networkManager.userInfo.userFirstName
     }
     
     func signOut() {
-    
+        
         interactor?.makeSignOut()
-        navigation?.popToLoginVCInWindow()
+        //        navigation?.popToLoginVCInWindow()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    deinit {
+        print("****Login deinit****")
     }
-    */
-
+    
+    // VKSDK UI Delegate
+    
+    public func vkSdkShouldPresent(_ controller: UIViewController!) {
+        self.present(controller, animated: true, completion: nil)
+    }
+    
+    public func vkSdkNeedCaptchaEnter(_ captchaError: VKError!){
+        let vc = VKCaptchaViewController.captchaControllerWithError(captchaError)
+        vc?.present(in: self)
+    }
+    
 }

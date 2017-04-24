@@ -10,45 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481052.827639"
+            timestampString = "514739638.341925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "vkSdkShouldPresent(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481054.579742"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "vkSdkNeedCaptchaEnter(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481055.843585"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "vkSdkAccessAuthorizationFinished(with:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAccessAuthorizationFinished (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.805113"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "2890">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAccessAuthorizationFinished (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.808445"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "3137">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481057.139683"
+            timestampString = "514739638.341925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "vkSdkUserAuthorizationFailed()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,43 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481192.466068"
+            timestampString = "514739638.341925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getTokenWithSDK()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481343.792674"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "vkSdkAccessTokenUpdated(_:oldToken:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481347.448467"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "vkSdkTokenHasExpired(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,13 +90,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481349.280272"
+            timestampString = "514739638.341925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "vkSdkAuthorizationStateUpdated(with:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.828708"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "217">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.831231"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "279">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -138,13 +138,333 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/AppDelegate.swift"
-            timestampString = "514481946.889653"
+            timestampString = "514722817.068807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "application(application:openURL:sourceApplication:sourceApplication:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/LoginViewController.swift"
+            timestampString = "514731615.064693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/LoginViewController.swift"
+            timestampString = "514731615.064693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "vkSdkShouldPresent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/LoginViewController.swift"
+            timestampString = "514731615.064693"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "webView(_:shouldStartLoadWith:navigationType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/NetworkManager.swift"
+            timestampString = "514739638.341925"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "signOutAsUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/MainVC.swift"
+            timestampString = "514742898.423196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "configureNavigationBar()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/NetworkManager.swift"
+            timestampString = "514739784.715691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "vkSdkAuthorizationStateUpdated(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.87076"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "2802">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.873857"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "3040">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/NetworkManager.swift"
+            timestampString = "514739785.923653"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "vkSdkAuthorizationStateUpdated(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.880047"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2069">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.883401"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "2307">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/NetworkManager.swift"
+            timestampString = "514739787.268092"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "vkSdkAuthorizationStateUpdated(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.890595"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "3535">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.893486"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "3773">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/NetworkManager.swift"
+            timestampString = "514739789.915727"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "vkSdkAuthorizationStateUpdated(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.89989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "4250">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.vkSdkAuthorizationStateUpdated (with : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.VKAuthorizationResult&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/NetworkManager.swift"
+                  timestampString = "514744855.90285"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "4488">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/UserNavBar.swift"
+            timestampString = "514744780.75459"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "setNavigationBar(withImage:username:userLastName:userNickname:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.UserNavBar.setNavigationBar (withImage : Swift.Optional&lt;Swift.String&gt;, username : Swift.Optional&lt;Swift.String&gt;, userLastName : Swift.Optional&lt;Swift.String&gt;, userNickname : Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/UserNavBar.swift"
+                  timestampString = "514744855.930437"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "243">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.UserNavBar.setNavigationBar (withImage : Swift.Optional&lt;Swift.String&gt;, username : Swift.Optional&lt;Swift.String&gt;, userLastName : Swift.Optional&lt;Swift.String&gt;, userNickname : Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/UserNavBar.swift"
+                  timestampString = "514744855.933173"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "416">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -9,10 +9,12 @@
 import VK_ios_sdk
 import Foundation
 
-class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate, VKSdkUIDelegate {
+class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
     
     var token = AccessToken.shared
+    var userInfo = UserModel.shared
     var session: URLSession!
+    let sdkInstance = VKSdk.initialize(withAppId: Constant.APP_ID)
     
     struct Constant {
         static var APP_ID: String = "5993769"
@@ -36,10 +38,28 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate, VKSdkUIDel
         return instance
     }()
     
-    func getTokenWithSDK() {
-        let sdkInstance = VKSdk.initialize(withAppId: Constant.APP_ID)
+    func getTokenWithSDK(onCompletion:@escaping (_ error: Error) -> Void) {
+        
         sdkInstance?.register(self as VKSdkDelegate)
-        sdkInstance?.uiDelegate = self as VKSdkUIDelegate
+        userInfo.getUserdataFromDefaults()
+        VKSdk.wakeUpSession([VK_PER_WALL, VK_PER_PHOTOS, VK_PER_OFFLINE]) {
+            [weak self] (state, error) -> Void in
+            if (state == .authorized) {
+                print ("Authorized")
+            } else if ((error) != nil) {
+                onCompletion(error!)
+            } else {
+                print ("NotAuthorized")
+                let scopePermissions = ["email", "friends", "wall", "offline", "photos", "notes"]
+                if VKSdk.vkAppMayExists() == true {
+                    VKSdk.authorize(scopePermissions)
+                } else {
+                    VKSdk.authorize(scopePermissions, with: [.disableSafariController])
+                }
+                
+            }
+            
+        }
     }
     
     func gotTokenUser(_ responce: String) {
@@ -106,66 +126,90 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate, VKSdkUIDel
         for cookie in HTTPCookieStorage.shared.cookies! {
             cookies.deleteCookie(cookie)
         }
-        UserDefaults.standard.removeObject(forKey: "acc_token")
-        UserDefaults.standard.removeObject(forKey: "expires_in")
-        UserDefaults.standard.removeObject(forKey: "user_id")
+
+        VKSdk.forceLogout()
+        token.resetToken()
+        userInfo.resetUser()
     }
     
-    public func vkSdkShouldPresent(_ controller: UIViewController!) {
-    
-    }
-    
-    
-    /**
-     Calls when user must perform captcha-check.
-     If you implementing this method by yourself, call -[VKError answerCaptcha:] method for captchaError with user entered answer.
-     
-     @param captchaError error returned from API. You can load captcha image from <b>captchaImg</b> property.
-     */
-    public func vkSdkNeedCaptchaEnter(_ captchaError: VKError!){
-    
-    }
-    
-    /**
-     Notifies about authorization was completed, and returns authorization result with new token or error.
-     
-     @param result contains new token or error, retrieved after VK authorization.
-     */
     public func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
-    
+        if let token = result.token.accessToken {
+            self.token.token = token
+            UserDefaults.standard.set(token, forKey: "acc_token")
+        }
+            let interval = Double(result.token.expiresIn)
+            token.expiredDate = Date.init(timeIntervalSinceNow: interval) as Date
+            UserDefaults.standard.set(token.expiredDate, forKey: "expires_in")
+
+            token.userID = result.token.userId
+            UserDefaults.standard.set(token.userID, forKey: "user_id")
+
+        if let user = result.user {
+            userInfo.userID = "\(user.id)"
+            userInfo.city = user.city.title
+            userInfo.country = user.country.title
+            userInfo.photo_50 = user.photo_50
+            userInfo.userFirstName = user.first_name
+            userInfo.userLastName = user.last_name
+            userInfo.userNickName = user.nickname
+        }
+        
     }
     
-    
-    /**
-     Notifies about access error. For example, this may occurs when user rejected app permissions through VK.com
-     */
     public func vkSdkUserAuthorizationFailed() {
-    
+        print("error, User rejected the app!!!")
     }
     
     public func vkSdkAuthorizationStateUpdated(with result: VKAuthorizationResult!) {
-    
+        if let user = result.user {
+            if let userID = user.id {
+                userInfo.userID = "\(userID)"
+            }
+            if let city = user.city {
+                userInfo.city = city.title
+                UserDefaults.standard.set(city, forKey: "city")
+            }
+            if let country = user.country {
+                userInfo.country = country.title
+                UserDefaults.standard.set(country, forKey: "country")
+            }
+            if let photo_50 = user.photo_50 {
+                userInfo.photo_50 = photo_50
+                UserDefaults.standard.set(photo_50, forKey: "photo_50")
+            }
+            if let first_name = user.first_name {
+                userInfo.userFirstName = first_name
+                UserDefaults.standard.set(first_name, forKey: "first_name")
+            }
+            if let last_name = user.last_name {
+                userInfo.userLastName = last_name
+                UserDefaults.standard.set(last_name, forKey: "last_name")
+            }
+            if let nickname = user.nickname {
+                userInfo.userNickName = nickname
+                UserDefaults.standard.set(nickname, forKey: "nickname")
+            }
+        }
     }
     
-    
-    /**
-     Notifies about access token has been changed
-     
-     @param newToken new token for API requests
-     @param oldToken previous used token
-     */
     public func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
-    
+        if newToken != nil {
+            if let token = newToken.accessToken {
+                self.token.token = token
+                UserDefaults.standard.set(token, forKey: "acc_token")
+            }
+            let interval = Double(newToken.expiresIn)
+            token.expiredDate = Date.init(timeIntervalSinceNow: interval) as Date
+            UserDefaults.standard.set(token.expiredDate, forKey: "expires_in")
+            
+            token.userID = newToken.userId
+            UserDefaults.standard.set(token.userID, forKey: "user_id")
+            
+        }
     }
-    
-    
-    /**
-     Notifies about existing token has expired (by timeout). This may occurs if you requested token without no_https scope.
-     
-     @param expiredToken old token that has expired.
-     */
+
     public func vkSdkTokenHasExpired(_ expiredToken: VKAccessToken!) {
-    
+        print("token expired")
     }
     
 }

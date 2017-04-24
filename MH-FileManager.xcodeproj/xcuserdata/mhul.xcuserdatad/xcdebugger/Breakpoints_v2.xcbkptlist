@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/NetworkManager.swift"
-            timestampString = "514481152.531465"
+            timestampString = "514739638.341925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "getUserInfo(onCompletion:)"
             landmarkType = "7">
          </BreakpointContent>

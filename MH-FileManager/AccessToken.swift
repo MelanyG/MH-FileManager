@@ -39,6 +39,16 @@ class AccessToken {
         } else {
             return false
         }
+    }
+    
+    func resetToken() {
         
+        UserDefaults.standard.removeObject(forKey: "acc_token")
+        UserDefaults.standard.removeObject(forKey: "expires_in")
+        UserDefaults.standard.removeObject(forKey: "user_id")
+        
+        token = nil
+        expiredDate = nil
+        userID = nil
     }
 }
