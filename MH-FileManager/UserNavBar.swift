@@ -40,8 +40,8 @@ class UserNavBar: UINavigationBar {
         if let url = imageUrl {
             imageView?.setImageWithURL(url: url)
         }
-        let lblFrame = CGRect(x: self.bounds.midX - 60, y: 0, width: 120, height: 50)
-        username?.frame = lblFrame
+//        let lblFrame = CGRect(x: self.bounds.midX - 60, y: 0, width: 120, height: 50)
+//        username?.frame = lblFrame
         var stringname = String()
         if let firstname = name {
             stringname = firstname

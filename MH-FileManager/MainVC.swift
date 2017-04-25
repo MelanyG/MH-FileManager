@@ -13,8 +13,9 @@ class MainVC: UIViewController, VKSdkUIDelegate {
     
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
-    
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
         
         signInPressed()
