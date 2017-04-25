@@ -14,6 +14,11 @@ class MainVC: UIViewController, VKSdkUIDelegate {
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
 
+    @IBOutlet weak var zipQty: UILabel!
+    @IBOutlet weak var txtQty: UILabel!
+    @IBOutlet weak var pngQty: UILabel!
+    @IBOutlet weak var pdfQty: UILabel!
+     
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -21,6 +26,7 @@ class MainVC: UIViewController, VKSdkUIDelegate {
         signInPressed()
         
         configureNavigationBar()
+        interactor?.getFilesInDocumentsFolder()
     }
     
     func signInPressed() {
@@ -89,6 +95,26 @@ class MainVC: UIViewController, VKSdkUIDelegate {
         let vc = VKCaptchaViewController.captchaControllerWithError(captchaError)
         vc?.present(in: self)
     }
+    
+    // UITableViewCell Delegate
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 0
+    }
+    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?)
+////        let repo = repositories[indexPath.row]
+////        cell?.configure(withRepo: repo)
+//       retun cell
+//    }
     
     // Status Bar appearance
     
