@@ -17,6 +17,10 @@ class MainInteractor: MainInteractorProtocol {
         networkManager.signOutAsUser()
     }
     
+    func makeSignIn() {
+    
+    }
+    
     func getCurrentUserInfo() -> String {
         networkManager.getUserInfo {
             [weak self](result: UserModel) in

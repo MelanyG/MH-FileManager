@@ -151,8 +151,8 @@
 		396F6E731EA8C65E00EC4F69 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */,
 				396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */,
+				396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */,
 			);
 			name = Routing;
 			sourceTree = "<group>";

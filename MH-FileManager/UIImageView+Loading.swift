@@ -11,7 +11,8 @@ import UIKit
 extension UIImageView {
     
     func setImageWithURL(url:String) {
-        
+        layer.cornerRadius = frame.size.width / 2
+        clipsToBounds = true
         let sessionTask = URLSession.shared
         if url.characters.count < 1 {
             return

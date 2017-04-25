@@ -12,5 +12,6 @@ import Foundation
 protocol MainInteractorProtocol {
 
     func makeSignOut()
+    func makeSignIn()
     
 }

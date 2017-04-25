@@ -26,8 +26,8 @@ class UserNavBar: UINavigationBar {
         username?.textAlignment = .center
         
         username?.textColor = UIColor.white
-        username?.shadowColor = UIColor.init(white: 1.0, alpha: 0.5)
-        username?.font = UIFont(name: "HelveticaNeue", size: CGFloat(18))
+        username?.shadowColor = UIColor.init(white: 1.0, alpha: 0.2)
+        username?.font = UIFont(name: "Menlo", size: CGFloat(17))
         addSubview(username!)
     }
     
@@ -52,7 +52,7 @@ class UserNavBar: UINavigationBar {
         }
         if stringname.characters.count > 1 {
             username?.text = stringname
-            username?.numberOfLines = 2
+            username?.numberOfLines = 0
         } else {
             if let nickname = nick {
                 username?.text = nickname

@@ -15,6 +15,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
     var userInfo = UserModel.shared
     var session: URLSession!
     let sdkInstance = VKSdk.initialize(withAppId: Constant.APP_ID)
+    var completion: ((_ error: Error?) -> Void)?
     
     struct Constant {
         static var APP_ID: String = "5993769"
@@ -38,16 +39,17 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
         return instance
     }()
     
-    func getTokenWithSDK(onCompletion:@escaping (_ error: Error) -> Void) {
+    func getTokenWithSDK(onCompletion:@escaping (_ error: Error?) -> Void) {
         
         sdkInstance?.register(self as VKSdkDelegate)
         userInfo.getUserdataFromDefaults()
         VKSdk.wakeUpSession([VK_PER_WALL, VK_PER_PHOTOS, VK_PER_OFFLINE]) {
             [weak self] (state, error) -> Void in
             if (state == .authorized) {
+                onCompletion(nil)
                 print ("Authorized")
             } else if ((error) != nil) {
-                onCompletion(error!)
+                onCompletion(error)
             } else {
                 print ("NotAuthorized")
                 let scopePermissions = ["email", "friends", "wall", "offline", "photos", "notes"]
@@ -56,7 +58,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
                 } else {
                     VKSdk.authorize(scopePermissions, with: [.disableSafariController])
                 }
-                
+                self?.completion = onCompletion
             }
             
         }
@@ -189,6 +191,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
                 userInfo.userNickName = nickname
                 UserDefaults.standard.set(nickname, forKey: "nickname")
             }
+            completion!(nil)
         }
     }
     

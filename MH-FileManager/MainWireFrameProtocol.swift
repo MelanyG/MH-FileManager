@@ -9,6 +9,7 @@
 import UIKit
 
 protocol MainWireFrameProtocol {
+    
     func presentMainVCInWindow()
     
 }
