@@ -9,13 +9,77 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/MainInteractor.swift"
-            timestampString = "514815716.110514"
+            filePath = "MH-FileManager/String+Subscripts.swift"
+            timestampString = "514899058.242839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "getFilesInDocumentsFolder()"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "String"
+            landmarkType = "4">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in MH_FileManager):Swift.String.subscript.getter : (Swift.Range&lt;Swift.Int&gt;) -&gt; Swift.String"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/String+Subscripts.swift"
+                  timestampString = "514909817.572913"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "306">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(extension in MH_FileManager):Swift.String.(subscript.getter : (Swift.Range&lt;Swift.Int&gt;) -&gt; Swift.String).(implicit closure #3)"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mhul/Documents/Projects/FileManager/MH-FileManager/String+Subscripts.swift"
+                  timestampString = "514909817.575459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/MainVC.swift"
+            timestampString = "514911274.365454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/FileCell.swift"
+            timestampString = "514910567.677387"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "configureCell(fileObj:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

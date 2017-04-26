@@ -9,24 +9,45 @@
 import VK_ios_sdk
 import UIKit
 
-class MainVC: UIViewController, VKSdkUIDelegate {
+class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
-
+    var dataSource: [FileObject]?
+    
+    
     @IBOutlet weak var zipQty: UILabel!
     @IBOutlet weak var txtQty: UILabel!
     @IBOutlet weak var pngQty: UILabel!
     @IBOutlet weak var pdfQty: UILabel!
-     
+    @IBOutlet weak var detailTableView: UITableView!
+    
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
         
         signInPressed()
-        
+
         configureNavigationBar()
-        interactor?.getFilesInDocumentsFolder()
+        interactor?.prepareAllData(){
+            [weak self] (array: [FileObject]?) in
+            if array != nil {
+                DispatchQueue.main.async {
+                    self?.dataSource = array
+                    self?.detailTableView.delegate = self
+                    self?.detailTableView.dataSource = self
+                    self?.detailTableView.estimatedRowHeight = 50
+                    self?.detailTableView.rowHeight = UITableViewAutomaticDimension
+                    self?.detailTableView.reloadData()
+                    self?.zipQty.text = "\(DataSource.shared.zipFile)"
+                    self?.txtQty.text = "\(DataSource.shared.txtFile)"
+                    self?.pngQty.text = "\(DataSource.shared.pngFile)"
+                    self?.pdfQty.text = "\(DataSource.shared.pdfFile)"
+                }
+            }
+        }
+
     }
     
     func signInPressed() {
@@ -97,8 +118,7 @@ class MainVC: UIViewController, VKSdkUIDelegate {
     }
     
     // UITableViewCell Delegate
-    
-    
+ 
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
@@ -106,15 +126,16 @@ class MainVC: UIViewController, VKSdkUIDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return (dataSource?.count)!
     }
     
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?)
-////        let repo = repositories[indexPath.row]
-////        cell?.configure(withRepo: repo)
-//       retun cell
-//    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell
+        let fileInfo = dataSource?[indexPath.row]
+        cell?.configureCell(fileObj:fileInfo!)
+
+       return cell!
+    }
     
     // Status Bar appearance
     

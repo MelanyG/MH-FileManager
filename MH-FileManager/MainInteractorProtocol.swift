@@ -13,5 +13,6 @@ protocol MainInteractorProtocol {
 
     func makeSignOut()
     func makeSignIn()
+    func prepareAllData(onCompletion:@escaping (_ array: [FileObject]?) -> Void)
     
 }
