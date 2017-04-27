@@ -7,70 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		362DD9E11EA9604B005F4051 /* LoginWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 362DD9E01EA9604B005F4051 /* LoginWireFrame.swift */; };
-		396F6E511EA8BD9700EC4F69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */; };
 		396F6E581EA8BD9700EC4F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E571EA8BD9700EC4F69 /* Assets.xcassets */; };
 		396F6E5B1EA8BD9700EC4F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E591EA8BD9700EC4F69 /* LaunchScreen.storyboard */; };
-		396F6E631EA8BDD400EC4F69 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E621EA8BDD400EC4F69 /* MainVC.swift */; };
-		396F6E651EA8BDF800EC4F69 /* MainVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */; };
-		396F6E671EA8BE1000EC4F69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6E661EA8BE1000EC4F69 /* Main.storyboard */; };
-		396F6E6B1EA8C5E800EC4F69 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */; };
-		396F6E6D1EA8C60200EC4F69 /* MainInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */; };
-		396F6E701EA8C64000EC4F69 /* MainWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */; };
-		396F6E721EA8C65900EC4F69 /* MainWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */; };
-		396F6E751EA8CE1B00EC4F69 /* RootWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */; };
-		396F6E771EA8D58000EC4F69 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E761EA8D58000EC4F69 /* NetworkManager.swift */; };
-		396F6E7A1EA8D76500EC4F69 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E791EA8D76500EC4F69 /* UserModel.swift */; };
-		396F6E9B1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */; };
-		396F6E9D1EA8F64700EC4F69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */; };
-		396F6E9F1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */; };
-		396F6EA11EA8F67A00EC4F69 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */; };
-		396F6EA31EA8F68D00EC4F69 /* LoginInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */; };
-		396F6EA71EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */; };
-		396F6EAD1EA8F72200EC4F69 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 396F6EAC1EA8F72200EC4F69 /* Login.storyboard */; };
-		396F6EAF1EA8FADA00EC4F69 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */; };
-		396F6EB11EAE396100EC4F69 /* UserNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EB01EAE396100EC4F69 /* UserNavBar.swift */; };
-		396F6EB31EAE3CFF00EC4F69 /* UIImageView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */; };
-		39F42CB71EB0AA5F002919D7 /* FileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CB61EB0AA5F002919D7 /* FileObject.swift */; };
-		39F42CB91EB0ABAD002919D7 /* MHFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CB81EB0ABAD002919D7 /* MHFileManager.swift */; };
-		39F42CBB1EB0AD76002919D7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CBA1EB0AD76002919D7 /* DataSource.swift */; };
-		39F42CBD1EB0BB7D002919D7 /* String+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CBC1EB0BB7D002919D7 /* String+Subscripts.swift */; };
-		39F42CBF1EB0CC2B002919D7 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CBE1EB0CC2B002919D7 /* FileCell.swift */; };
+		39F42CF31EB23B56002919D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CCB1EB23B56002919D7 /* AppDelegate.swift */; };
+		39F42CF41EB23B56002919D7 /* RootWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CCC1EB23B56002919D7 /* RootWireFrame.swift */; };
+		39F42CF51EB23B56002919D7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CCF1EB23B56002919D7 /* DataSource.swift */; };
+		39F42CF61EB23B56002919D7 /* MHFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD11EB23B56002919D7 /* MHFileManager.swift */; };
+		39F42CF71EB23B56002919D7 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD31EB23B56002919D7 /* AccessToken.swift */; };
+		39F42CF81EB23B56002919D7 /* FileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD41EB23B56002919D7 /* FileObject.swift */; };
+		39F42CF91EB23B56002919D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD51EB23B56002919D7 /* UserModel.swift */; };
+		39F42CFA1EB23B56002919D7 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD71EB23B56002919D7 /* NetworkManager.swift */; };
+		39F42CFB1EB23B56002919D7 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD81EB23B56002919D7 /* NetworkManagerProtocol.swift */; };
+		39F42CFC1EB23B56002919D7 /* UserNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CD91EB23B56002919D7 /* UserNavBar.swift */; };
+		39F42CFD1EB23B56002919D7 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CDC1EB23B56002919D7 /* MainInteractor.swift */; };
+		39F42CFE1EB23B56002919D7 /* MainInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CDD1EB23B56002919D7 /* MainInteractorProtocol.swift */; };
+		39F42CFF1EB23B56002919D7 /* MainWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CDF1EB23B56002919D7 /* MainWireFrame.swift */; };
+		39F42D001EB23B56002919D7 /* MainWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CE01EB23B56002919D7 /* MainWireFrameProtocol.swift */; };
+		39F42D011EB23B56002919D7 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CE31EB23B56002919D7 /* FileCell.swift */; };
+		39F42D021EB23B56002919D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F42CE41EB23B56002919D7 /* Main.storyboard */; };
+		39F42D031EB23B56002919D7 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CE51EB23B56002919D7 /* MainVC.swift */; };
+		39F42D041EB23B56002919D7 /* MainVCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CE61EB23B56002919D7 /* MainVCProtocol.swift */; };
+		39F42D051EB23B56002919D7 /* PDFInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CE91EB23B56002919D7 /* PDFInteractorProtocol.swift */; };
+		39F42D061EB23B56002919D7 /* PDFInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CEA1EB23B56002919D7 /* PDFInteractor.swift */; };
+		39F42D071EB23B56002919D7 /* PDFWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CEC1EB23B56002919D7 /* PDFWireFrame.swift */; };
+		39F42D081EB23B56002919D7 /* PDFWireFrameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CED1EB23B56002919D7 /* PDFWireFrameProtocol.swift */; };
+		39F42D091EB23B56002919D7 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CEF1EB23B56002919D7 /* PdfViewController.swift */; };
+		39F42D0A1EB23B56002919D7 /* String+Subscripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CF11EB23B56002919D7 /* String+Subscripts.swift */; };
+		39F42D0B1EB23B56002919D7 /* UIImageView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F42CF21EB23B56002919D7 /* UIImageView+Loading.swift */; };
 		AFE35C3BE7D581385773D9DD /* Pods_MH_FileManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD453FF4766F7FE45882E5 /* Pods_MH_FileManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		362DD9E01EA9604B005F4051 /* LoginWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrame.swift; sourceTree = "<group>"; };
 		396F6E4D1EA8BD9700EC4F69 /* MH-FileManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MH-FileManager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		396F6E571EA8BD9700EC4F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		396F6E5A1EA8BD9700EC4F69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		396F6E5C1EA8BD9700EC4F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		396F6E621EA8BDD400EC4F69 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCProtocol.swift; sourceTree = "<group>"; };
-		396F6E661EA8BE1000EC4F69 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
-		396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractorProtocol.swift; sourceTree = "<group>"; };
-		396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrame.swift; sourceTree = "<group>"; };
-		396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrameProtocol.swift; sourceTree = "<group>"; };
-		396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireFrame.swift; sourceTree = "<group>"; };
-		396F6E761EA8D58000EC4F69 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		396F6E791EA8D76500EC4F69 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
-		396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewControllerProtocol.swift; sourceTree = "<group>"; };
-		396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
-		396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInteractorProtocol.swift; sourceTree = "<group>"; };
-		396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWireFrameProtocol.swift; sourceTree = "<group>"; };
-		396F6EAC1EA8F72200EC4F69 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
-		396F6EB01EAE396100EC4F69 /* UserNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavBar.swift; sourceTree = "<group>"; };
-		396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loading.swift"; sourceTree = "<group>"; };
-		39F42CB61EB0AA5F002919D7 /* FileObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileObject.swift; sourceTree = "<group>"; };
-		39F42CB81EB0ABAD002919D7 /* MHFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFileManager.swift; sourceTree = "<group>"; };
-		39F42CBA1EB0AD76002919D7 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		39F42CBC1EB0BB7D002919D7 /* String+Subscripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Subscripts.swift"; sourceTree = "<group>"; };
-		39F42CBE1EB0CC2B002919D7 /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		39F42CCB1EB23B56002919D7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		39F42CCC1EB23B56002919D7 /* RootWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootWireFrame.swift; sourceTree = "<group>"; };
+		39F42CCF1EB23B56002919D7 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		39F42CD11EB23B56002919D7 /* MHFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MHFileManager.swift; sourceTree = "<group>"; };
+		39F42CD31EB23B56002919D7 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		39F42CD41EB23B56002919D7 /* FileObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileObject.swift; sourceTree = "<group>"; };
+		39F42CD51EB23B56002919D7 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		39F42CD71EB23B56002919D7 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		39F42CD81EB23B56002919D7 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		39F42CD91EB23B56002919D7 /* UserNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNavBar.swift; sourceTree = "<group>"; };
+		39F42CDC1EB23B56002919D7 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		39F42CDD1EB23B56002919D7 /* MainInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractorProtocol.swift; sourceTree = "<group>"; };
+		39F42CDF1EB23B56002919D7 /* MainWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrame.swift; sourceTree = "<group>"; };
+		39F42CE01EB23B56002919D7 /* MainWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWireFrameProtocol.swift; sourceTree = "<group>"; };
+		39F42CE31EB23B56002919D7 /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		39F42CE41EB23B56002919D7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		39F42CE51EB23B56002919D7 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		39F42CE61EB23B56002919D7 /* MainVCProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVCProtocol.swift; sourceTree = "<group>"; };
+		39F42CE91EB23B56002919D7 /* PDFInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFInteractorProtocol.swift; sourceTree = "<group>"; };
+		39F42CEA1EB23B56002919D7 /* PDFInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFInteractor.swift; sourceTree = "<group>"; };
+		39F42CEC1EB23B56002919D7 /* PDFWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFWireFrame.swift; sourceTree = "<group>"; };
+		39F42CED1EB23B56002919D7 /* PDFWireFrameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFWireFrameProtocol.swift; sourceTree = "<group>"; };
+		39F42CEF1EB23B56002919D7 /* PdfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		39F42CF11EB23B56002919D7 /* String+Subscripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Subscripts.swift"; sourceTree = "<group>"; };
+		39F42CF21EB23B56002919D7 /* UIImageView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Loading.swift"; sourceTree = "<group>"; };
 		5BB849A4095FAEA058CE8669 /* Pods-MH-FileManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MH-FileManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-MH-FileManager/Pods-MH-FileManager.release.xcconfig"; sourceTree = "<group>"; };
 		65B38251D46965F6E611601E /* Pods-MH-FileManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MH-FileManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MH-FileManager/Pods-MH-FileManager.debug.xcconfig"; sourceTree = "<group>"; };
 		6DCD453FF4766F7FE45882E5 /* Pods_MH_FileManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MH_FileManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,11 +113,11 @@
 		396F6E4F1EA8BD9700EC4F69 /* MH-FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				396F6EA81EA8F6C000EC4F69 /* Login */,
-				396F6E681EA8C4EB00EC4F69 /* Main */,
-				396F6E501EA8BD9700EC4F69 /* AppDelegate.swift */,
-				396F6E741EA8CE1B00EC4F69 /* RootWireFrame.swift */,
-				396F6E781EA8D73D00EC4F69 /* Common */,
+				39F42CCA1EB23B56002919D7 /* AppDelegate */,
+				39F42CCD1EB23B56002919D7 /* Common */,
+				39F42CDA1EB23B56002919D7 /* Main */,
+				39F42CE71EB23B56002919D7 /* PDF */,
+				39F42CF01EB23B56002919D7 /* Extension */,
 				396F6E571EA8BD9700EC4F69 /* Assets.xcassets */,
 				396F6E591EA8BD9700EC4F69 /* LaunchScreen.storyboard */,
 				396F6E5C1EA8BD9700EC4F69 /* Info.plist */,
@@ -129,106 +125,152 @@
 			path = "MH-FileManager";
 			sourceTree = "<group>";
 		};
-		396F6E681EA8C4EB00EC4F69 /* Main */ = {
+		39F42CCA1EB23B56002919D7 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E6E1EA8C60A00EC4F69 /* BusinessLogic */,
-				396F6E691EA8C4FC00EC4F69 /* UI */,
-				396F6E731EA8C65E00EC4F69 /* Routing */,
+				39F42CCB1EB23B56002919D7 /* AppDelegate.swift */,
+				39F42CCC1EB23B56002919D7 /* RootWireFrame.swift */,
 			);
-			name = Main;
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		396F6E691EA8C4FC00EC4F69 /* UI */ = {
+		39F42CCD1EB23B56002919D7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E621EA8BDD400EC4F69 /* MainVC.swift */,
-				39F42CBE1EB0CC2B002919D7 /* FileCell.swift */,
-				396F6E641EA8BDF800EC4F69 /* MainVCProtocol.swift */,
-				396F6E661EA8BE1000EC4F69 /* Main.storyboard */,
+				39F42CCE1EB23B56002919D7 /* DataSource */,
+				39F42CD01EB23B56002919D7 /* FileManager */,
+				39F42CD21EB23B56002919D7 /* Models */,
+				39F42CD61EB23B56002919D7 /* NetworkManager */,
+				39F42CD91EB23B56002919D7 /* UserNavBar.swift */,
 			);
-			name = UI;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		396F6E6E1EA8C60A00EC4F69 /* BusinessLogic */ = {
+		39F42CCE1EB23B56002919D7 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E6C1EA8C60200EC4F69 /* MainInteractorProtocol.swift */,
-				396F6E6A1EA8C5E800EC4F69 /* MainInteractor.swift */,
+				39F42CCF1EB23B56002919D7 /* DataSource.swift */,
 			);
-			name = BusinessLogic;
+			path = DataSource;
 			sourceTree = "<group>";
 		};
-		396F6E731EA8C65E00EC4F69 /* Routing */ = {
+		39F42CD01EB23B56002919D7 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E6F1EA8C64000EC4F69 /* MainWireFrame.swift */,
-				396F6E711EA8C65900EC4F69 /* MainWireFrameProtocol.swift */,
+				39F42CD11EB23B56002919D7 /* MHFileManager.swift */,
 			);
-			name = Routing;
+			path = FileManager;
 			sourceTree = "<group>";
 		};
-		396F6E781EA8D73D00EC4F69 /* Common */ = {
+		39F42CD21EB23B56002919D7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				39F42CBC1EB0BB7D002919D7 /* String+Subscripts.swift */,
-				39F42CB81EB0ABAD002919D7 /* MHFileManager.swift */,
-				39F42CBA1EB0AD76002919D7 /* DataSource.swift */,
-				396F6EB01EAE396100EC4F69 /* UserNavBar.swift */,
-				396F6EB21EAE3CFF00EC4F69 /* UIImageView+Loading.swift */,
-				396F6E761EA8D58000EC4F69 /* NetworkManager.swift */,
-				396F6E9A1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift */,
-				396F6E991EA8D7B000EC4F69 /* Entities */,
+				39F42CD31EB23B56002919D7 /* AccessToken.swift */,
+				39F42CD41EB23B56002919D7 /* FileObject.swift */,
+				39F42CD51EB23B56002919D7 /* UserModel.swift */,
 			);
-			name = Common;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		396F6E991EA8D7B000EC4F69 /* Entities */ = {
+		39F42CD61EB23B56002919D7 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				39F42CB61EB0AA5F002919D7 /* FileObject.swift */,
-				396F6E791EA8D76500EC4F69 /* UserModel.swift */,
-				396F6EAE1EA8FADA00EC4F69 /* AccessToken.swift */,
+				39F42CD71EB23B56002919D7 /* NetworkManager.swift */,
+				39F42CD81EB23B56002919D7 /* NetworkManagerProtocol.swift */,
 			);
-			name = Entities;
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
-		396F6EA81EA8F6C000EC4F69 /* Login */ = {
+		39F42CDA1EB23B56002919D7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				396F6EA91EA8F6CF00EC4F69 /* UI */,
-				396F6EAA1EA8F6DD00EC4F69 /* BusinessLogic */,
-				396F6EAB1EA8F6EB00EC4F69 /* Routing */,
+				39F42CDB1EB23B56002919D7 /* BusinessLogic */,
+				39F42CDE1EB23B56002919D7 /* Routing */,
+				39F42CE11EB23B56002919D7 /* UI */,
 			);
-			name = Login;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		396F6EA91EA8F6CF00EC4F69 /* UI */ = {
+		39F42CDB1EB23B56002919D7 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				396F6E9C1EA8F64700EC4F69 /* LoginViewController.swift */,
-				396F6E9E1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift */,
-				396F6EAC1EA8F72200EC4F69 /* Login.storyboard */,
+				39F42CDC1EB23B56002919D7 /* MainInteractor.swift */,
+				39F42CDD1EB23B56002919D7 /* MainInteractorProtocol.swift */,
 			);
-			name = UI;
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
-		396F6EAA1EA8F6DD00EC4F69 /* BusinessLogic */ = {
+		39F42CDE1EB23B56002919D7 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				396F6EA01EA8F67A00EC4F69 /* LoginInteractor.swift */,
-				396F6EA21EA8F68D00EC4F69 /* LoginInteractorProtocol.swift */,
+				39F42CDF1EB23B56002919D7 /* MainWireFrame.swift */,
+				39F42CE01EB23B56002919D7 /* MainWireFrameProtocol.swift */,
 			);
-			name = BusinessLogic;
+			path = Routing;
 			sourceTree = "<group>";
 		};
-		396F6EAB1EA8F6EB00EC4F69 /* Routing */ = {
+		39F42CE11EB23B56002919D7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				362DD9E01EA9604B005F4051 /* LoginWireFrame.swift */,
-				396F6EA61EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift */,
+				39F42CE21EB23B56002919D7 /* Cells */,
+				39F42CE41EB23B56002919D7 /* Main.storyboard */,
+				39F42CE51EB23B56002919D7 /* MainVC.swift */,
+				39F42CE61EB23B56002919D7 /* MainVCProtocol.swift */,
 			);
-			name = Routing;
+			path = UI;
+			sourceTree = "<group>";
+		};
+		39F42CE21EB23B56002919D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CE31EB23B56002919D7 /* FileCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		39F42CE71EB23B56002919D7 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CE81EB23B56002919D7 /* BusinessLogic */,
+				39F42CEB1EB23B56002919D7 /* Routing */,
+				39F42CEE1EB23B56002919D7 /* UI */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		39F42CE81EB23B56002919D7 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CE91EB23B56002919D7 /* PDFInteractorProtocol.swift */,
+				39F42CEA1EB23B56002919D7 /* PDFInteractor.swift */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		39F42CEB1EB23B56002919D7 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CEC1EB23B56002919D7 /* PDFWireFrame.swift */,
+				39F42CED1EB23B56002919D7 /* PDFWireFrameProtocol.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		39F42CEE1EB23B56002919D7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CEF1EB23B56002919D7 /* PdfViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		39F42CF01EB23B56002919D7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				39F42CF11EB23B56002919D7 /* String+Subscripts.swift */,
+				39F42CF21EB23B56002919D7 /* UIImageView+Loading.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		963BA41E3955F8FAA31CF33B /* Pods */ = {
@@ -302,8 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396F6EAD1EA8F72200EC4F69 /* Login.storyboard in Resources */,
-				396F6E671EA8BE1000EC4F69 /* Main.storyboard in Resources */,
+				39F42D021EB23B56002919D7 /* Main.storyboard in Resources */,
 				396F6E5B1EA8BD9700EC4F69 /* LaunchScreen.storyboard in Resources */,
 				396F6E581EA8BD9700EC4F69 /* Assets.xcassets in Resources */,
 			);
@@ -364,31 +405,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				396F6E9D1EA8F64700EC4F69 /* LoginViewController.swift in Sources */,
-				396F6E9B1EA8EE5900EC4F69 /* NetworkManagerProtocol.swift in Sources */,
-				396F6EA11EA8F67A00EC4F69 /* LoginInteractor.swift in Sources */,
-				396F6E771EA8D58000EC4F69 /* NetworkManager.swift in Sources */,
-				362DD9E11EA9604B005F4051 /* LoginWireFrame.swift in Sources */,
-				396F6E9F1EA8F66400EC4F69 /* LoginViewControllerProtocol.swift in Sources */,
-				396F6EB11EAE396100EC4F69 /* UserNavBar.swift in Sources */,
-				396F6EA31EA8F68D00EC4F69 /* LoginInteractorProtocol.swift in Sources */,
-				396F6E6D1EA8C60200EC4F69 /* MainInteractorProtocol.swift in Sources */,
-				396F6EB31EAE3CFF00EC4F69 /* UIImageView+Loading.swift in Sources */,
-				396F6E6B1EA8C5E800EC4F69 /* MainInteractor.swift in Sources */,
-				396F6E651EA8BDF800EC4F69 /* MainVCProtocol.swift in Sources */,
-				39F42CBB1EB0AD76002919D7 /* DataSource.swift in Sources */,
-				396F6E631EA8BDD400EC4F69 /* MainVC.swift in Sources */,
-				396F6EAF1EA8FADA00EC4F69 /* AccessToken.swift in Sources */,
-				396F6E751EA8CE1B00EC4F69 /* RootWireFrame.swift in Sources */,
-				396F6EA71EA8F6B500EC4F69 /* LoginWireFrameProtocol.swift in Sources */,
-				396F6E721EA8C65900EC4F69 /* MainWireFrameProtocol.swift in Sources */,
-				396F6E701EA8C64000EC4F69 /* MainWireFrame.swift in Sources */,
-				39F42CB91EB0ABAD002919D7 /* MHFileManager.swift in Sources */,
-				39F42CB71EB0AA5F002919D7 /* FileObject.swift in Sources */,
-				396F6E7A1EA8D76500EC4F69 /* UserModel.swift in Sources */,
-				39F42CBD1EB0BB7D002919D7 /* String+Subscripts.swift in Sources */,
-				39F42CBF1EB0CC2B002919D7 /* FileCell.swift in Sources */,
-				396F6E511EA8BD9700EC4F69 /* AppDelegate.swift in Sources */,
+				39F42CF81EB23B56002919D7 /* FileObject.swift in Sources */,
+				39F42D0A1EB23B56002919D7 /* String+Subscripts.swift in Sources */,
+				39F42CFB1EB23B56002919D7 /* NetworkManagerProtocol.swift in Sources */,
+				39F42CFC1EB23B56002919D7 /* UserNavBar.swift in Sources */,
+				39F42D011EB23B56002919D7 /* FileCell.swift in Sources */,
+				39F42D041EB23B56002919D7 /* MainVCProtocol.swift in Sources */,
+				39F42CF91EB23B56002919D7 /* UserModel.swift in Sources */,
+				39F42D031EB23B56002919D7 /* MainVC.swift in Sources */,
+				39F42CF51EB23B56002919D7 /* DataSource.swift in Sources */,
+				39F42D071EB23B56002919D7 /* PDFWireFrame.swift in Sources */,
+				39F42D001EB23B56002919D7 /* MainWireFrameProtocol.swift in Sources */,
+				39F42D051EB23B56002919D7 /* PDFInteractorProtocol.swift in Sources */,
+				39F42CF41EB23B56002919D7 /* RootWireFrame.swift in Sources */,
+				39F42D081EB23B56002919D7 /* PDFWireFrameProtocol.swift in Sources */,
+				39F42CFD1EB23B56002919D7 /* MainInteractor.swift in Sources */,
+				39F42CFA1EB23B56002919D7 /* NetworkManager.swift in Sources */,
+				39F42CF61EB23B56002919D7 /* MHFileManager.swift in Sources */,
+				39F42D0B1EB23B56002919D7 /* UIImageView+Loading.swift in Sources */,
+				39F42CFE1EB23B56002919D7 /* MainInteractorProtocol.swift in Sources */,
+				39F42CF31EB23B56002919D7 /* AppDelegate.swift in Sources */,
+				39F42CF71EB23B56002919D7 /* AccessToken.swift in Sources */,
+				39F42D061EB23B56002919D7 /* PDFInteractor.swift in Sources */,
+				39F42CFF1EB23B56002919D7 /* MainWireFrame.swift in Sources */,
+				39F42D091EB23B56002919D7 /* PdfViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

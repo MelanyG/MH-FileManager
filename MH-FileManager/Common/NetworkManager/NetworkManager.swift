@@ -9,6 +9,8 @@
 import VK_ios_sdk
 import Foundation
 
+let authNotification = Notification.Name(rawValue:"AuthCodeReceived")
+
 class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
     
     var token = AccessToken.shared
@@ -27,7 +29,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
     }
     
     var authUrl: URL {
-    
+        
         get {
             return URL(string:"https://oauth.vk.com/authorize?client_id=\(Constant.APP_ID)&display=mobile&redirect_uri=\(Constant.RedirectURL)&scope=139270&response_type=token&v=5.63&state=123456")!
         }
@@ -85,7 +87,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
                 } else if key == "user_id" {
                     token.userID = values.last
                     UserDefaults.standard.set(token.userID, forKey: "user_id")
-                  }
+                }
             }
         }
     }
@@ -98,12 +100,12 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
         urlRequest.httpMethod = "GET"
         session = URLSession(configuration: .default)
         let task = session.dataTask(with: urlRequest) {
-            [weak self] (data, response, error) -> Void in
+            (data, response, error) -> Void in
             
             if let data = data {
                 do {
                     if let jsonResult = try JSONSerialization.jsonObject(with: data , options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-
+                        
                         print(jsonResult)
                         onCompletion(UserModel() )
                         
@@ -128,24 +130,32 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
         for cookie in HTTPCookieStorage.shared.cookies! {
             cookies.deleteCookie(cookie)
         }
-
+        
         VKSdk.forceLogout()
         token.resetToken()
         userInfo.resetUser()
     }
     
     public func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+        
+        guard result.token != nil else {
+            let nc = NotificationCenter.default
+            nc.post(name:authNotification,
+                    object: nil,
+                    userInfo: nil)
+            return }
+        
         if let token = result.token.accessToken {
             self.token.token = token
             UserDefaults.standard.set(token, forKey: "acc_token")
         }
-            let interval = Double(result.token.expiresIn)
-            token.expiredDate = Date.init(timeIntervalSinceNow: interval) as Date
-            UserDefaults.standard.set(token.expiredDate, forKey: "expires_in")
-
-            token.userID = result.token.userId
-            UserDefaults.standard.set(token.userID, forKey: "user_id")
-
+        let interval = Double(result.token.expiresIn)
+        token.expiredDate = Date.init(timeIntervalSinceNow: interval) as Date
+        UserDefaults.standard.set(token.expiredDate, forKey: "expires_in")
+        
+        token.userID = result.token.userId
+        UserDefaults.standard.set(token.userID, forKey: "user_id")
+        
         if let user = result.user {
             userInfo.userID = "\(user.id)"
             userInfo.city = user.city.title
@@ -210,7 +220,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
             
         }
     }
-
+    
     public func vkSdkTokenHasExpired(_ expiredToken: VKAccessToken!) {
         print("token expired")
     }

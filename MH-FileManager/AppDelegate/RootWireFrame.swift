@@ -9,8 +9,7 @@
 import UIKit
 
 class RootWireFrame {
-    
-    var loginWireFrame: LoginWireFrame?
+
     let mainWireFrame: MainWireFrame?
     let navigationController: UINavigationController?
     
@@ -20,27 +19,16 @@ class RootWireFrame {
     }
     
     func application(didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?, window: UIWindow) -> Bool {
-//        self.loginWireFrame = LoginWireFrame()
+
         configureNavigationBar()
-//        loginWireFrame?.navigationController = navigationController
-//        self.loginWireFrame?.window = window
+
         self.mainWireFrame?.window = window
         self.mainWireFrame?.navigationController = navigationController
         self.mainWireFrame?.presentMainVCInWindow()
-//        checkIfUserLoggedIn()
+
         return true
     }
     
-    func checkIfUserLoggedIn() {
-        //TODO check for validToken
-        if AccessToken.shared.isValidToken() {
-           self.mainWireFrame?.presentMainVCInWindow()
-        } else {
-            loginWireFrame?.presentLoginScreenInWindow()
-            
-        }
-        
-    }
     
     func configureNavigationBar() {
         

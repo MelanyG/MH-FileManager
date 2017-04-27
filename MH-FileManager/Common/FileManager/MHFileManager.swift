@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-        enum FileType {
+    enum FileType {
         case Text
         case PNG
         case PDF
@@ -34,8 +34,7 @@ class MHFileManager {
         do {
             // Get the directory contents urls (including subfolders urls)
             let directoryContents = try manager.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
-            
-            print(directoryContents)
+
             
             // if you want to filter the directory contents you can do like this:
             let txtFiles = directoryContents.filter{ $0.pathExtension == "txt" }

@@ -28,7 +28,12 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         signInPressed()
-
+        
+        let nc = NotificationCenter.default
+        nc.addObserver(forName:authNotification,
+                       object:nil, queue:nil,
+                       using:catchNotification)
+        
         configureNavigationBar()
         interactor?.prepareAllData(){
             [weak self] (array: [FileObject]?) in
@@ -37,8 +42,11 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
                     self?.dataSource = array
                     self?.detailTableView.delegate = self
                     self?.detailTableView.dataSource = self
-                    self?.detailTableView.estimatedRowHeight = 50
+                    self?.detailTableView.estimatedRowHeight = 80
                     self?.detailTableView.rowHeight = UITableViewAutomaticDimension
+                    
+                    self?.detailTableView.setNeedsLayout()
+                    self?.detailTableView.layoutIfNeeded()
                     self?.detailTableView.reloadData()
                     self?.zipQty.text = "\(DataSource.shared.zipFile)"
                     self?.txtQty.text = "\(DataSource.shared.txtFile)"
@@ -69,14 +77,16 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func configureNavigationBar() {
-        interactor?.networkManager.userInfo.getUserdataFromDefaults()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
-        if let font = UIFont(name: "Menlo", size: 17) {
-            navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName:font], for: .normal)
-        }
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
         
+            interactor?.networkManager.userInfo.getUserdataFromDefaults()
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
+            if let font = UIFont(name: "Menlo", size: 17) {
+                navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName:font], for: .normal)
+            }
+            navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
+    
+
     
     func setUserProfile() {
         let navbar = navigation?.navigationController?.navigationBar as! UserNavBar
@@ -93,7 +103,7 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func signOut() {
-        if navigationItem.rightBarButtonItem?.tag == 0 {
+        if navigationItem.rightBarButtonItem?.tag == 0 && interactor?.networkManager.token.token == nil {
             interactor?.makeSignOut()
             navigationItem.rightBarButtonItem?.title = "Sign in"
             navigationItem.rightBarButtonItem?.tag = 5
@@ -105,7 +115,15 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         }
         
     }
-   
+    
+    // Notifications
+    
+    func catchNotification(notification:Notification) -> Void {
+        navigationItem.rightBarButtonItem?.title = "Sign in"
+        navigationItem.rightBarButtonItem?.tag = 5
+        setDefaultProfile()
+       
+    }
     // VKSDK UI Delegate
     
     public func vkSdkShouldPresent(_ controller: UIViewController!) {
@@ -130,10 +148,32 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell
-        let fileInfo = dataSource?[indexPath.row]
-        cell?.configureCell(fileObj:fileInfo!)
+        let fileInfo = dataSource?[indexPath.row] as! FileObject
+        var cell: FileCell?
 
+        switch fileInfo.type {
+        case .Text:
+            let cellText = tableView.dequeueReusableCell(withIdentifier: "TextFileCell", for: indexPath) as? TextFileCell
+            let objText = fileInfo as! TXTFile
+            cellText?.configureCell(fileObj:objText)
+            cell = cellText
+         case .PDF:
+            let obj = fileInfo as! PDFFile
+            let cellText = tableView.dequeueReusableCell(withIdentifier: "PDFFileCell", for: indexPath) as? PdfFileCell
+            cellText?.configureCell(fileObj:obj)
+            cellText?.delegate = navigation!
+            cell = cellText
+        case .PNG:
+            let obj = fileInfo as! PNGFile
+            let cellText = tableView.dequeueReusableCell(withIdentifier: "ImageFileCell", for: indexPath) as? ImageFileCell
+            cellText?.configureCell(fileObj:obj)
+            cell = cellText
+        case .ZIP:
+            cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell
+            cell?.configureCell(fileObj:fileInfo)
+        default:
+            break
+        }
        return cell!
     }
     
@@ -143,7 +183,10 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         return .lightContent
     }
     
+    // Deinit
+    
     deinit {
-        print("****Login deinit****")
+        print("****Main deinit****")
+        NotificationCenter.default.removeObserver(self, name: authNotification, object: nil)
     }
 }
