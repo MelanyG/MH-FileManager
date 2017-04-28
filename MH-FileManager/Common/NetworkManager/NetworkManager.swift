@@ -54,7 +54,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
                 onCompletion(error)
             } else {
                 print ("NotAuthorized")
-                let scopePermissions = ["email", "friends", "wall", "offline", "photos", "notes"]
+                let scopePermissions = ["email", "friends", "wall", "offline", "photos", "notes", "docs"]
                 if VKSdk.vkAppMayExists() == true {
                     VKSdk.authorize(scopePermissions)
                 } else {
@@ -90,6 +90,133 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
                 }
             }
         }
+    }
+    
+    func downloadDoc(onCompletion:@escaping (_ serverAddress: String?) -> Void) {
+        let url = URL(string:"\(Constant.ApiVCMethods)docs.getUploadServer?access_token=\(token.token!)&v=5.63")
+        var urlRequest = URLRequest.init(url: url!)
+        
+        urlRequest.httpMethod = "GET"
+        session = URLSession(configuration: .default)
+        let task = session.dataTask(with: urlRequest) {
+            (data, response, error) -> Void in
+            
+            if let data = data {
+                do {
+                    if let jsonResult = try JSONSerialization.jsonObject(with: data , options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+                        if let result = jsonResult["response"] as? NSDictionary {
+                            if let upload = result["upload_url"] {
+                                onCompletion(upload as? String)
+                            }
+                        }
+                        print(jsonResult)
+                        
+                        
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            
+        }
+        task.resume()
+
+    }
+    
+    func postZipFile(withName name: String) {
+    let url = URL(string:"\(Constant.ApiVCMethods)docs.save?fields=photo_100&access_token=\(token.token!)&v=5.63")
+    
+        downloadDoc() {
+           [weak self] (serverAddress: String?) in
+            
+            guard let address = serverAddress else { return }
+            print(address)
+            self?.uploadFileToServer(address, withName: name)
+        }
+
+    
+    }
+    
+    func uploadFileToServer(_ uploadUrl: String, withName name: String) {
+        let url = URL(string:uploadUrl)
+        guard let urlExist = url else { return }
+        var urlRequest = URLRequest.init(url: urlExist, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+        var dataZip: Data?
+        do {
+        dataZip = try Data.init(contentsOf: URL(string:uploadUrl)!)
+        } catch let error as NSError {
+                print(error.localizedDescription)
+        }
+
+        var _params: [String : Data] = Dictionary()
+//        _params["file"] = uploadUrl
+        _params["file"] = dataZip
+        var body = Data()
+        
+        let boundary = "---------------------------0983745982375409872438752038475287"
+        
+        let contentType = "multipart/form-data; boundary=\(boundary)"
+        urlRequest.addValue(contentType, forHTTPHeaderField:"Content-Type")
+        
+//        for param in _params {
+//            
+//            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+//            body.append("Content-Disposition: form-data; name=\"\(param.key)\"\r\n\r\n".data(using: .utf8)!)
+//            body.append(dataZip!)
+//            body.append("\r\n".data(using: .utf8)!)
+//        }
+        
+//        if uploadUrl.characters.count > 0 {
+//            
+//            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+//            body.append("Content-Disposition: form-data; name=\"file\"\r\n\r\n".data(using: .utf8)!)
+//            body.append(uploadUrl.data(using: .utf8)!)
+//            body.append("\r\n".data(using: .utf8)!)
+//            
+//        }
+        if let zipData = dataZip {
+            
+            body.append("--\(boundary)\r\n".data(using: .utf8)!)
+            body.append("Content-Disposition: form-data; file=\"AccessibilityTest.zip\"\r\n".data(using: .utf8)!)
+            body.append("Content-Type: application/octet-stream\r\n\r\n".data(using: .utf8)!)
+            body.append(zipData)
+//            body.append(uploadUrl.data(using: .utf8)!)
+            body.append("\r\n".data(using: .utf8)!)
+
+        }
+        
+        body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        urlRequest.httpBody = body
+        
+        urlRequest.httpMethod = "POST"
+        session = URLSession(configuration: .default)
+        let task = session.dataTask(with: urlRequest) {
+            [weak self](data, response, error) -> Void in
+            
+            if let data = data {
+                do {
+                    if let returnData = String(data: data, encoding: .utf8) {
+                        print(returnData)
+                    }
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+                
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            
+        }
+        task.resume()
+
+        
     }
     
     func getUserInfo(onCompletion:@escaping (_ result: UserModel) -> Void) {
@@ -203,6 +330,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
             }
             completion!(nil)
         }
+        
     }
     
     public func vkSdkAccessTokenUpdated(_ newToken: VKAccessToken!, oldToken: VKAccessToken!) {
@@ -219,6 +347,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
             UserDefaults.standard.set(token.userID, forKey: "user_id")
             
         }
+        print(token.token)
     }
     
     public func vkSdkTokenHasExpired(_ expiredToken: VKAccessToken!) {

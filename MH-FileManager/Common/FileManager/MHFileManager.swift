@@ -9,17 +9,17 @@
 import UIKit
 import Foundation
 
-    enum FileType {
-        case Text
-        case PNG
-        case PDF
-        case ZIP
-        case General
-    }
+enum FileType {
+    case Text
+    case PNG
+    case PDF
+    case ZIP
+    case General
+}
 
 class MHFileManager {
     
-
+    
     let manager = FileManager.default
     
     static let shared: MHFileManager = {
@@ -34,16 +34,16 @@ class MHFileManager {
         do {
             // Get the directory contents urls (including subfolders urls)
             let directoryContents = try manager.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: [])
-
             
+            checkForDirectories(inPath: documentsUrl, withAlreadyExisted: directoryContents)
             // if you want to filter the directory contents you can do like this:
             let txtFiles = directoryContents.filter{ $0.pathExtension == "txt" }
             for i in 0..<txtFiles.count {
                 performFileObjects(url: txtFiles[i].path, withExt: FileType.Text)
             }
             let pngFiles = directoryContents.filter{ $0.pathExtension == "png" }
-                   for i in 0..<pngFiles.count {
-                    performFileObjects(url: pngFiles[i].path, withExt: FileType.PNG)
+            for i in 0..<pngFiles.count {
+                performFileObjects(url: pngFiles[i].path, withExt: FileType.PNG)
             }
             let zipFiles = directoryContents.filter{ $0.pathExtension == "zip" }
             for i in 0..<zipFiles.count {
@@ -60,6 +60,29 @@ class MHFileManager {
             onCompletion(DataSource.shared.allFiles)
         } catch let error as NSError {
             print(error.localizedDescription)
+        }
+    }
+    
+    func checkForDirectories(inPath path: URL, withAlreadyExisted files:[URL]) {
+        let directoryNames = ["ZIPFiles", "PNGFiles", "PDFFiles", "TXTFiles"]
+        for i in 0..<directoryNames.count {
+            let newDir = path.appendingPathComponent(directoryNames[i])
+            
+            if files.contains(newDir) {
+                print("yes")
+            } else {
+                createDirectory(atPath: newDir)
+            }
+            
+        }
+    }
+    
+    func createDirectory(atPath directiry:URL) {
+        do {
+            try manager.createDirectory(atPath: directiry.path,
+                                        withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("Error: \(error.localizedDescription)")
         }
     }
     
@@ -92,7 +115,7 @@ class MHFileManager {
                 file.fileLink = createClickableLinkForPDFFile(url: url)
                 DataSource.shared.allFiles.append(file)
             }
-
+            
         case .ZIP:
             let file = FileObject()
             file.type = FileType.ZIP
@@ -147,6 +170,6 @@ class MHFileManager {
         return 0
     }
     
-
+    
     
 }

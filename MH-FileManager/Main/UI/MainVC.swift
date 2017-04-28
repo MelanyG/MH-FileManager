@@ -14,14 +14,14 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
     var dataSource: [FileObject]?
-    
+    var headerTitles = ["Files in Documents"]
     
     @IBOutlet weak var zipQty: UILabel!
     @IBOutlet weak var txtQty: UILabel!
     @IBOutlet weak var pngQty: UILabel!
     @IBOutlet weak var pdfQty: UILabel!
     @IBOutlet weak var detailTableView: UITableView!
-    
+   
     
     override func viewDidLoad() {
 
@@ -59,6 +59,9 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func signInPressed() {
+
+        navigationItem.rightBarButtonItem?.title = "Sign out"
+        navigationItem.rightBarButtonItem?.action = #selector(signOut)
         interactor?.networkManager.sdkInstance?.uiDelegate = self as VKSdkUIDelegate
         interactor?.networkManager.getTokenWithSDK() {
             [weak self] (error: Error?) in
@@ -103,17 +106,12 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func signOut() {
-        if navigationItem.rightBarButtonItem?.tag == 0 && interactor?.networkManager.token.token == nil {
+
             interactor?.makeSignOut()
             navigationItem.rightBarButtonItem?.title = "Sign in"
-            navigationItem.rightBarButtonItem?.tag = 5
+            navigationItem.rightBarButtonItem?.action = #selector(signInPressed)
             setDefaultProfile()
-        } else {
-            signInPressed()
-            navigationItem.rightBarButtonItem?.tag = 0
-            navigationItem.rightBarButtonItem?.title = "Sign out"
-        }
-        
+
     }
     
     // Notifications
@@ -171,10 +169,19 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         case .ZIP:
             cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell
             cell?.configureCell(fileObj:fileInfo)
+            cell?.delegateZip = self.interactor
         default:
             break
         }
        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return headerTitles[section]
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return headerTitles.count
     }
     
     // Status Bar appearance

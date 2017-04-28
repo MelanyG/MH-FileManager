@@ -27,11 +27,12 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summary Part" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3V-JZ-7zA">
                                         <rect key="frame" x="0.0" y="0.0" width="409.5" height="30"/>
+                                        <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7qx-YP-U8v"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-aK-bQK">
@@ -154,48 +155,69 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details Part" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T88-A4-vb8">
                                         <rect key="frame" x="0.0" y="0.0" width="614.5" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="HV4-us-g36"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ASu-v8-SFw">
                                         <rect key="frame" x="0.0" y="30" width="614.5" height="718"/>
                                         <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCell" id="XXR-0j-0dB" customClass="FileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="614.5" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCell" rowHeight="150" id="XXR-0j-0dB" customClass="FileCell" customModule="MH_FileManager" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="614.5" height="150"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXR-0j-0dB" id="hZV-4t-nOR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="149.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSk-yF-2BT">
-                                                            <rect key="frame" x="546.5" y="8" width="60" height="35.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSk-yF-2BT">
+                                                            <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="3Gu-2F-a2K"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ua-Pa-YjB">
-                                                            <rect key="frame" x="13" y="8" width="513.5" height="27.5"/>
+                                                            <rect key="frame" x="13" y="8" width="513.5" height="133.5"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjQ-vx-OgB">
+                                                            <rect key="frame" x="544.5" y="54.5" width="60" height="95"/>
+                                                            <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="5Ll-JS-GPA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <state key="normal" title="Save">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="saveButtonTapped:" destination="XXR-0j-0dB" eventType="touchUpInside" id="DH5-dp-j9S"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="cSk-yF-2BT" secondAttribute="bottom" id="8fc-K9-eH6"/>
                                                         <constraint firstItem="1ua-Pa-YjB" firstAttribute="leading" secondItem="hZV-4t-nOR" secondAttribute="leadingMargin" constant="5" id="8iW-ii-qau"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="1ua-Pa-YjB" secondAttribute="bottom" id="GfA-EO-LRe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SjQ-vx-OgB" secondAttribute="trailing" constant="10" id="Ml2-QK-6Cd"/>
                                                         <constraint firstItem="1ua-Pa-YjB" firstAttribute="top" secondItem="hZV-4t-nOR" secondAttribute="topMargin" id="cdF-Og-NJM"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="cSk-yF-2BT" secondAttribute="trailing" id="dE6-7j-COX"/>
+                                                        <constraint firstItem="SjQ-vx-OgB" firstAttribute="top" secondItem="cSk-yF-2BT" secondAttribute="bottom" constant="30" id="dkz-zc-isB"/>
                                                         <constraint firstItem="cSk-yF-2BT" firstAttribute="top" secondItem="hZV-4t-nOR" secondAttribute="topMargin" id="eqA-Ig-iD1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SjQ-vx-OgB" secondAttribute="bottom" id="mI6-ZW-KAo"/>
                                                         <constraint firstItem="cSk-yF-2BT" firstAttribute="leading" secondItem="1ua-Pa-YjB" secondAttribute="trailing" constant="20" id="o9e-bQ-mKm"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -205,40 +227,61 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFileCell" rowHeight="235" id="FtR-o8-a3O" customClass="TextFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="72" width="614.5" height="235"/>
+                                                <rect key="frame" x="0.0" y="178" width="614.5" height="235"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FtR-o8-a3O" id="mCR-3z-4FS">
                                                     <rect key="frame" x="0.0" y="0.0" width="614.5" height="234.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zD-AR-dFQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zD-AR-dFQ">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="KBk-hK-EuO"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-dr-cS8">
-                                                            <rect key="frame" x="13" y="8" width="513.5" height="188.5"/>
+                                                            <rect key="frame" x="13" y="8" width="513.5" height="179"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qad-LG-Xqf">
-                                                            <rect key="frame" x="13" y="201.5" width="589" height="20"/>
+                                                            <rect key="frame" x="13" y="202" width="518.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Fj-9p-tm5">
+                                                            <rect key="frame" x="546.5" y="54.5" width="60" height="32"/>
+                                                            <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="dW6-ZT-tvg"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <state key="normal" title="Save">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="saveButtonTapped:" destination="FtR-o8-a3O" eventType="touchUpInside" id="ZKw-xu-wbZ"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="Qad-LG-Xqf" firstAttribute="top" secondItem="xmg-dr-cS8" secondAttribute="bottom" constant="5" id="7SX-2l-VDY"/>
+                                                        <constraint firstItem="9Fj-9p-tm5" firstAttribute="top" secondItem="2zD-AR-dFQ" secondAttribute="bottom" constant="30" id="4J0-Rg-89n"/>
+                                                        <constraint firstItem="Qad-LG-Xqf" firstAttribute="top" secondItem="xmg-dr-cS8" secondAttribute="bottom" constant="15" id="7SX-2l-VDY"/>
                                                         <constraint firstItem="xmg-dr-cS8" firstAttribute="leading" secondItem="mCR-3z-4FS" secondAttribute="leadingMargin" constant="5" id="8LM-Fz-KHO"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="Qad-LG-Xqf" secondAttribute="bottom" constant="5" id="YYv-AB-PxG"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="Qad-LG-Xqf" secondAttribute="trailing" constant="5" id="Zr4-mA-xx6"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Qad-LG-Xqf" secondAttribute="trailing" constant="75" id="Zr4-mA-xx6"/>
                                                         <constraint firstItem="2zD-AR-dFQ" firstAttribute="leading" secondItem="xmg-dr-cS8" secondAttribute="trailing" constant="20" id="b1n-dK-VVR"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="9Fj-9p-tm5" secondAttribute="trailing" id="gY5-wL-Byc"/>
                                                         <constraint firstItem="Qad-LG-Xqf" firstAttribute="leading" secondItem="mCR-3z-4FS" secondAttribute="leadingMargin" constant="5" id="heg-88-eU9"/>
                                                         <constraint firstItem="2zD-AR-dFQ" firstAttribute="top" secondItem="mCR-3z-4FS" secondAttribute="topMargin" id="lXC-M7-Dlh"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="2zD-AR-dFQ" secondAttribute="trailing" id="mCo-rW-mRa"/>
@@ -252,23 +295,23 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageFileCell" rowHeight="163" id="f1E-0C-lKU" customClass="ImageFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="307" width="614.5" height="163"/>
+                                                <rect key="frame" x="0.0" y="413" width="614.5" height="163"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f1E-0C-lKU" id="3GK-KE-BBg">
                                                     <rect key="frame" x="0.0" y="0.0" width="614.5" height="162.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me2-SK-VEG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me2-SK-VEG">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="LbP-aL-lOj"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6H-Hs-3Wk">
-                                                            <rect key="frame" x="13" y="8" width="514" height="75"/>
+                                                            <rect key="frame" x="13" y="8" width="514" height="65"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -280,10 +323,31 @@
                                                                 <constraint firstAttribute="height" constant="50" id="zJG-BO-G1a"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS1-aT-1Wj">
+                                                            <rect key="frame" x="546" y="54.5" width="60" height="32"/>
+                                                            <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="60" id="6ED-9J-oUi"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <state key="normal" title="Save">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="saveButtonTapped:" destination="f1E-0C-lKU" eventType="touchUpInside" id="4lI-iG-ngg"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="trailingMargin" secondItem="Me2-SK-VEG" secondAttribute="trailing" id="52P-UZ-l4D"/>
-                                                        <constraint firstItem="H8k-5J-WYN" firstAttribute="top" secondItem="w6H-Hs-3Wk" secondAttribute="bottom" constant="5" id="dxA-OS-Kgn"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="kS1-aT-1Wj" secondAttribute="trailing" constant="1" id="LhI-S5-Xpi"/>
+                                                        <constraint firstItem="kS1-aT-1Wj" firstAttribute="top" secondItem="Me2-SK-VEG" secondAttribute="bottom" constant="30" id="W7m-jV-6SE"/>
+                                                        <constraint firstItem="H8k-5J-WYN" firstAttribute="top" secondItem="w6H-Hs-3Wk" secondAttribute="bottom" constant="15" id="dxA-OS-Kgn"/>
                                                         <constraint firstItem="w6H-Hs-3Wk" firstAttribute="top" secondItem="3GK-KE-BBg" secondAttribute="topMargin" id="hOs-u6-v3e"/>
                                                         <constraint firstItem="H8k-5J-WYN" firstAttribute="leading" secondItem="3GK-KE-BBg" secondAttribute="leadingMargin" constant="5" id="iIO-lQ-CVz"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="H8k-5J-WYN" secondAttribute="bottom" constant="16.5" id="lxO-nd-NAb"/>
@@ -299,33 +363,49 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PDFFileCell" rowHeight="235" id="75X-mz-sTa" customClass="PdfFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="470" width="614.5" height="235"/>
+                                                <rect key="frame" x="0.0" y="576" width="614.5" height="235"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75X-mz-sTa" id="Yq4-P9-Lzr">
                                                     <rect key="frame" x="0.0" y="0.0" width="614.5" height="234.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Au-oIZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Au-oIZ">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="CcE-a4-QWf"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suw-bZ-ftx">
-                                                            <rect key="frame" x="13" y="8" width="513.5" height="166"/>
+                                                            <rect key="frame" x="13" y="8" width="513.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lbl" translatesAutoresizingMaskIntoConstraints="NO" id="E7P-MZ-vjt">
-                                                            <rect key="frame" x="5" y="179" width="605" height="50"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccz-SB-2Oi">
+                                                            <rect key="frame" x="546" y="54.5" width="60" height="167"/>
+                                                            <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="50" id="rH1-ai-ZFQ"/>
+                                                                <constraint firstAttribute="width" constant="60" id="Hgg-aX-CLf"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                            <state key="normal" title="Save">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="saveButtonTapped:" destination="75X-mz-sTa" eventType="touchUpInside" id="8HG-Hn-P9j"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lbl" translatesAutoresizingMaskIntoConstraints="NO" id="E7P-MZ-vjt">
+                                                            <rect key="frame" x="5" y="43" width="539.5" height="186.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -333,13 +413,16 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="6oY-Au-oIZ" firstAttribute="leading" secondItem="Suw-bZ-ftx" secondAttribute="trailing" constant="20" id="18i-e8-4vQ"/>
-                                                        <constraint firstAttribute="trailing" secondItem="E7P-MZ-vjt" secondAttribute="trailing" constant="5" id="Pad-0T-YTc"/>
+                                                        <constraint firstItem="ccz-SB-2Oi" firstAttribute="top" secondItem="6oY-Au-oIZ" secondAttribute="bottom" constant="30" id="GX1-Gr-xkg"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="ccz-SB-2Oi" secondAttribute="trailing" id="L9O-lz-riN"/>
+                                                        <constraint firstAttribute="trailing" secondItem="E7P-MZ-vjt" secondAttribute="trailing" constant="70" id="Pad-0T-YTc"/>
                                                         <constraint firstItem="6oY-Au-oIZ" firstAttribute="top" secondItem="Yq4-P9-Lzr" secondAttribute="topMargin" id="RJr-gg-LRb"/>
                                                         <constraint firstItem="E7P-MZ-vjt" firstAttribute="leading" secondItem="Yq4-P9-Lzr" secondAttribute="leading" constant="5" id="TIW-lf-fbA"/>
                                                         <constraint firstItem="Suw-bZ-ftx" firstAttribute="leading" secondItem="Yq4-P9-Lzr" secondAttribute="leadingMargin" constant="5" id="YKT-Di-xp5"/>
-                                                        <constraint firstItem="E7P-MZ-vjt" firstAttribute="top" secondItem="Suw-bZ-ftx" secondAttribute="bottom" constant="5" id="blG-2I-ra7"/>
+                                                        <constraint firstItem="E7P-MZ-vjt" firstAttribute="top" secondItem="Suw-bZ-ftx" secondAttribute="bottom" constant="15" id="blG-2I-ra7"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="6oY-Au-oIZ" secondAttribute="trailing" id="dPR-Mq-QfB"/>
                                                         <constraint firstItem="Suw-bZ-ftx" firstAttribute="top" secondItem="Yq4-P9-Lzr" secondAttribute="topMargin" id="tpf-Qe-7FT"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="ccz-SB-2Oi" secondAttribute="bottom" constant="5" id="ya4-eC-Xbo"/>
                                                         <constraint firstAttribute="bottom" secondItem="E7P-MZ-vjt" secondAttribute="bottom" constant="5" id="zFj-9J-2tF"/>
                                                     </constraints>
                                                 </tableViewCellContentView>

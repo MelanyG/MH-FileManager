@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class MainInteractor: MainInteractorProtocol {
+class MainInteractor: MainInteractorProtocol, ZipCellDelegate {
     
     let networkManager = NetworkManager.shared
     let fileManager = MHFileManager.shared
@@ -38,5 +38,10 @@ class MainInteractor: MainInteractorProtocol {
         }
     }
     
+    //MARK ZipCellDelegate
     
+    func didtapSaveFile(withName name: String) {
+    
+        networkManager.postZipFile(withName: name.appending(".zip"))
+    }
 }

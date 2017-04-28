@@ -14,10 +14,29 @@ protocol FileCellDelegate {
 
 }
 
+protocol ZipCellDelegate {
+    
+    func didtapSaveFile(withName name: String)
+    
+}
+
 class FileCell: UITableViewCell {
     
     @IBOutlet weak var fileName: UILabel!
     @IBOutlet weak var fileSize: UILabel!
+    var delegateZip: ZipCellDelegate?
+    var fullFilePath: String?
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        guard delegateZip != nil else { return }
+        guard let path = fullFilePath else {
+            return
+        }
+        delegateZip?.didtapSaveFile(withName: path)
+        
+    }
+
     
     override func awakeFromNib() {
         
@@ -34,32 +53,7 @@ class FileCell: UITableViewCell {
     func configureCell(fileObj: FileObject) {
         fileName.text = fileObj.fileName
         fileSize.text = "\(fileObj.size) bytes"
-        //       textDescription.isHidden = true
-        //        imagView.isHidden = true
-        /*
-         imgViewHeight.constant = 50
-         switch fileObj.type {
-         case .Text:
-         let obj = fileObj as! TXTFile
-         if let text =  obj.fileText{
-         textDescription.isHidden = false
-         textDescription.text = text
-         }
-         case .PDF:
-         let obj = fileObj as! PDFFile
-         textDescription.isHidden = false
-         textDescription.text = "http:///Users/mhul/Library/Developer/CoreSimulator/Devices/16788ED0-C122-4549-A725-BE277A30115A/data/Containers/Data/Application/F47C8ACF-780E-4680-B175-3F8FAB976E92/Documents/Kent_Beck_Test-Driven_Development_by_Example.pdf"
-         case .PNG:
-         let obj = fileObj as! PNGFile
-         if let im = obj.fileImage {
-         imagView.isHidden = false
-         imgViewHeight.constant = 50
-         imagView.image = im
-         }
-         default: break
-         
-         }
-         */
+        fullFilePath = fileObj.fileUrl
     }
 }
 
@@ -75,6 +69,10 @@ class TextFileCell: FileCell {
             textFileLbl.text = text
         }
     }
+    
+    @IBAction override func saveButtonTapped(_ sender: Any) {
+        
+    }
 }
 
 class ImageFileCell: FileCell {
@@ -88,6 +86,10 @@ class ImageFileCell: FileCell {
             imgView.image = im
         }
 
+    }
+    
+    @IBAction override func saveButtonTapped(_ sender: Any) {
+        
     }
 }
 
@@ -123,6 +125,7 @@ class PdfFileCell: FileCell, UITextViewDelegate {
             theString.setAttributes(theAttribute, range: theRange)
   
             linkTextView.text = link
+            linkTextView.sizeToFit()
         }
         
     }
@@ -138,5 +141,9 @@ class PdfFileCell: FileCell, UITextViewDelegate {
         delegate?.didtap(onLink: (fileObject?.fileLink)!)
         
         return true
+    }
+    
+    @IBAction override func saveButtonTapped(_ sender: Any) {
+        
     }
 }
