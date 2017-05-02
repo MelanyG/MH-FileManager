@@ -212,6 +212,7 @@ class MHFileManager {
             getInfoForFile(url: stringPath, forFile: file)
             file.type = FileType.PNG
             file.fileExtension = ".png"
+            file.fileNameURL = url
             if file.fileName != nil {
                 let image = getImageForPNGFile(url: stringPath)
                 if image != nil {

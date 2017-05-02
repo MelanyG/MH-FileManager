@@ -9,62 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/Common/FileManager/MHFileManager.swift"
-            timestampString = "515444459.102638"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "moveFile(fromDirectory:toDirectory:withPathExt:onCompletion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/Common/FileManager/MHFileManager.swift"
-            timestampString = "515444459.102638"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "defineWhetherFilesShouldBeMoved(fileToMove:onCompletion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/Common/FileManager/MHFileManager.swift"
-            timestampString = "515444459.102638"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "checkWhetherFile(withPath:isInsideFolder:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "MH-FileManager/Main/UI/Cells/FileCell.swift"
-            timestampString = "515434688.039553"
+            timestampString = "515446753.365376"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "PdfFileCell"
-            landmarkType = "3">
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "textView(_:shouldInteractWith:in:interaction:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MH-FileManager/Main/BusinessLogic/MainInteractor.swift"
-            timestampString = "515442620.510878"
+            timestampString = "515446138.189012"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "pressedDelete(fileObject:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -265,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/Common/FileManager/MHFileManager.swift"
-            timestampString = "515444435.571647"
+            filePath = "MH-FileManager/Main/UI/Cells/FileCell.swift"
+            timestampString = "515445865.775745"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
-            landmarkName = "performFileObjects(url:withExt:specialFolder:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "savePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -281,13 +233,157 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MH-FileManager/Common/FileManager/MHFileManager.swift"
-            timestampString = "515444914.554617"
+            filePath = "MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+            timestampString = "515446059.341742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
-            landmarkName = "getInfoForFile(url:forFile:)"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "postZipFile(withName:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.postZipFile (withName : Foundation.URL, onCompletion : (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melanyGulianovych/Documents/Projects/FileManager/MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+                  timestampString = "515447045.897219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "746">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.(postZipFile (withName : Foundation.URL, onCompletion : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melanyGulianovych/Documents/Projects/FileManager/MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+                  timestampString = "515447045.898773"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "49">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/Main/UI/Cells/FileCell.swift"
+            timestampString = "515446304.525267"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "performDelegateAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/Main/UI/Cells/FileCell.swift"
+            timestampString = "515446532.668141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "performDelegateAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+            timestampString = "515446553.365018"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "uploadFileToServer(_:withName:onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.uploadFileToServer (Swift.String, withName : Foundation.URL, onCompletion : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melanyGulianovych/Documents/Projects/FileManager/MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+                  timestampString = "515447045.909682"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "217"
+                  endingLineNumber = "217"
+                  offsetFromSymbolStart = "6186">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MH_FileManager.NetworkManager.(uploadFileToServer (Swift.String, withName : Foundation.URL, onCompletion : (Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "MH-FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/melanyGulianovych/Documents/Projects/FileManager/MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+                  timestampString = "515447045.911238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "219"
+                  endingLineNumber = "219"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/Common/NetworkManager/NetworkManager.swift"
+            timestampString = "515446570.696262"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "uploadFileToServer(_:withName:onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MH-FileManager/Main/UI/Cells/FileCell.swift"
+            timestampString = "515446791.13231"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "performDelegateAction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

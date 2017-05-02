@@ -183,6 +183,7 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
             let obj = fileInfo as! PNGFile
             let cellText = tableView.dequeueReusableCell(withIdentifier: "ImageFileCell", for: indexPath) as? ImageFileCell
             cellText?.configureCell(fileObj:obj, inSpecialSection: sectionTwo)
+//            cellText?.delegateZip = self.interactor
             cell = cellText
         case .ZIP:
             let cellText = tableView.dequeueReusableCell(withIdentifier: "ZipCell", for: indexPath) as? ZipFileCell
@@ -213,11 +214,14 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         if savedObjects != nil {
             dataSourceSavedObjects = savedObjects!
         }
-        detailTableView.reloadData()
-        zipQty.text = "\(DataSource.shared.zipFile)"
-        txtQty.text = "\(DataSource.shared.txtFile)"
-        pngQty.text = "\(DataSource.shared.pngFile)"
-        pdfQty.text = "\(DataSource.shared.pdfFile)"
+        DispatchQueue.main.async {
+            self.detailTableView.reloadData()
+            self.zipQty.text = "\(DataSource.shared.zipFile)"
+            self.txtQty.text = "\(DataSource.shared.txtFile)"
+            self.pngQty.text = "\(DataSource.shared.pngFile)"
+            self.pdfQty.text = "\(DataSource.shared.pdfFile)"
+        }
+
     }
     
     // MARK:- Status Bar appearance

@@ -16,7 +16,7 @@ protocol PDFCellDelegate {
 
 protocol ZipCellDelegate {
     
-    func didtapSaveFile(withName name: URL)
+    func didtapSaveFile(withName name: URL, onCompletion:@escaping (_ success: Bool) -> Void)
     
 }
 
@@ -63,7 +63,7 @@ class FileCell: UITableViewCell {
     
     func performDeleteAction() {
         guard delegate != nil else { return }
-       delegate?.pressedDelete(fileObject: fileObject)
+        delegate?.pressedDelete(fileObject: fileObject)
     }
 }
 
@@ -73,8 +73,30 @@ class ZipFileCell: FileCell {
     
     @IBAction func savePressed(_ sender: Any) {
         guard delegateZip != nil else { return }
-        
-        delegate?.pressedSave(fileObject: fileObject)
+        if let file = fileObject.fileNameURL {
+            delegateZip?.didtapSaveFile(withName: file, onCompletion: {
+                [weak self] (success) in
+                if success {
+                    if self?.delegate != nil {
+                        self?.delegate?.pressedSave(fileObject: (self?.fileObject)!)
+                    }
+                }
+            })
+        }
+    }
+    
+    override func performDelegateAction() {
+        guard delegateZip != nil else { return }
+        if let file = fileObject.fileNameURL {
+            delegateZip?.didtapSaveFile(withName: file, onCompletion: {
+                [weak self] (success) in
+                if success {
+                    if self?.delegate != nil {
+                        self?.delegate?.pressedSave(fileObject: (self?.fileObject)!)
+                    }
+                }
+            })
+        }
     }
     
 }
@@ -103,6 +125,22 @@ class TextFileCell: FileCell {
 class ImageFileCell: FileCell {
     
     @IBOutlet weak var imgView: UIImageView!
+    var delegateZip: ZipCellDelegate?
+    
+    
+//    override func performDelegateAction() {
+//        guard delegateZip != nil else { return }
+//        if let file = fileObject.fileNameURL {
+//            delegateZip?.didtapSaveFile(withName: file, onCompletion: {
+//                [weak self] (success) in
+//                if success {
+//                    if self?.delegate != nil {
+//                        self?.delegate?.pressedSave(fileObject: (self?.fileObject)!)
+//                    }
+//                }
+//            })
+//        }
+//    }
     
     func configureCell(fileObj: PNGFile, inSpecialSection special: Bool) {
         super.configureCell(fileObj: fileObj, inSpecialSection: special)

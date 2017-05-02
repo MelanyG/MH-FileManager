@@ -127,7 +127,7 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
 
     }
     
-    func postZipFile(withName name: URL) {
+    func postZipFile(withName name: URL, onCompletion:@escaping (_ success: Bool) -> Void) {
     let url = URL(string:"\(Constant.ApiVCMethods)docs.save?fields=photo_100&access_token=\(token.token!)&v=5.63")
 //let im = UIImage.init(named: "vk")
 //    let request = VKApi.uploadWallPhotoRequest(im, parameters: VKImageParameters.pngImage(), userId: Int(token.userID!)!, groupId: 0)
@@ -143,16 +143,16 @@ class NetworkManager:NSObject, NetworkManagerProtocol, VKSdkDelegate {
 //     let request =    VKApi.request(withMethod: "docs.save", andParameters: _params)
         
 
-//        downloadDoc() {
-//           [weak self] (serverAddress: String?) in
-//            
-//            guard let address = serverAddress else { return }
-////            print(address)
-//            self?.uploadFileToServer(address, withName: name){
-//                [weak self] (serverAddress: String?) in
-//                print(serverAddress)
-//            }
-//        }
+        downloadDoc() {
+           [weak self] (serverAddress: String?) in
+            
+            guard let address = serverAddress else { return }
+//            print(address)
+            self?.uploadFileToServer(address, withName: name){
+                [weak self] (serverAddress: String?) in
+                print(serverAddress)
+            }
+        }
 
     
     }

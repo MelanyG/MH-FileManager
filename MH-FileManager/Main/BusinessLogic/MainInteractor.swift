@@ -42,9 +42,12 @@ class MainInteractor: MainInteractorProtocol, ZipCellDelegate, FileCellDelegate 
     
     // MARK:- ZipCellDelegate
     
-    func didtapSaveFile(withName name: URL) {
+    func didtapSaveFile(withName name: URL, onCompletion:@escaping (_ success: Bool) -> Void) {
         
-        networkManager.postZipFile(withName: name)
+        networkManager.postZipFile(withName: name, onCompletion: {
+            (success) in
+            onCompletion(success)
+        })
     }
     
    // MARK:- FileCellDelegate
