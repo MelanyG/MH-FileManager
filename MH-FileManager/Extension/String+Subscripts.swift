@@ -24,4 +24,9 @@ extension String {
         let lowerIndex = index(startIndex, offsetBy: range.lowerBound, limitedBy: endIndex) ?? endIndex
         return self[lowerIndex..<(index(lowerIndex, offsetBy: range.count, limitedBy: endIndex) ?? endIndex)]
     }
+    
+    var containsWhitespace : Bool {
+        return(self.rangeOfCharacter(from: .whitespacesAndNewlines) != nil)
+    }
+    
 }

@@ -21,6 +21,7 @@ class DataSource {
     var zipFile = 0
     
     var allFiles: [FileObject] = []
+    var allSavedFiles: [FileObject] = []
     
     
 }

@@ -12,6 +12,8 @@ import Foundation
 class FileObject {
 
     var fileName: String?
+    var fileNameURL: URL?
+    var fileExtension: String?
     var size: Int = 0
     var fileUrl: String?
     var type = FileType.General

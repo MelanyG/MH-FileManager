@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "396F6E4C1EA8BD9700EC4F69"
-               BuildableName = "MH-FileManager.app"
-               BlueprintName = "MH-FileManager"
-               ReferencedContainer = "container:MH-FileManager.xcodeproj">
+               BlueprintIdentifier = "2063FD71FB68CF920E623D8C40395AE4"
+               BuildableName = "Pods_MH_FileManager.framework"
+               BlueprintName = "Pods-MH-FileManager"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "396F6E4C1EA8BD9700EC4F69"
-            BuildableName = "MH-FileManager.app"
-            BlueprintName = "MH-FileManager"
-            ReferencedContainer = "container:MH-FileManager.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,23 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "396F6E4C1EA8BD9700EC4F69"
-            BuildableName = "MH-FileManager.app"
-            BlueprintName = "MH-FileManager"
-            ReferencedContainer = "container:MH-FileManager.xcodeproj">
+            BlueprintIdentifier = "2063FD71FB68CF920E623D8C40395AE4"
+            BuildableName = "Pods_MH_FileManager.framework"
+            BlueprintName = "Pods-MH-FileManager"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "396F6E4C1EA8BD9700EC4F69"
-            BuildableName = "MH-FileManager.app"
-            BlueprintName = "MH-FileManager"
-            ReferencedContainer = "container:MH-FileManager.xcodeproj">
+            BlueprintIdentifier = "2063FD71FB68CF920E623D8C40395AE4"
+            BuildableName = "Pods_MH_FileManager.framework"
+            BlueprintName = "Pods-MH-FileManager"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

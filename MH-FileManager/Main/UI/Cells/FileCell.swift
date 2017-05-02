@@ -8,53 +8,75 @@
 
 import UIKit
 
-protocol FileCellDelegate {
+protocol PDFCellDelegate {
     
     func didtap(onLink link: String)
-
+    
 }
 
 protocol ZipCellDelegate {
     
-    func didtapSaveFile(withName name: String)
+    func didtapSaveFile(withName name: URL)
     
+}
+
+protocol FileCellDelegate {
+    
+    func pressedSave(fileObject: FileObject)
+    func pressedDelete(fileObject: FileObject)
 }
 
 class FileCell: UITableViewCell {
     
     @IBOutlet weak var fileName: UILabel!
     @IBOutlet weak var fileSize: UILabel!
-    var delegateZip: ZipCellDelegate?
-    var fullFilePath: String?
+    @IBOutlet weak var saveButton: UIButton!
     
-    @IBAction func saveButtonTapped(_ sender: Any) {
-        
-        guard delegateZip != nil else { return }
-        guard let path = fullFilePath else {
-            return
-        }
-        delegateZip?.didtapSaveFile(withName: path)
-        
-    }
-
+    var fullFilePath: URL?
+    var fileObject: FileObject!
+    var status: Bool = false
+    var delegate: FileCellDelegate?
     
-    override func awakeFromNib() {
-        
-        super.awakeFromNib()
-        // Initialization code
-    }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    func configureCell(fileObj: FileObject) {
+    func configureCell(fileObj: FileObject, inSpecialSection special: Bool) {
         fileName.text = fileObj.fileName
         fileSize.text = "\(fileObj.size) bytes"
-        fullFilePath = fileObj.fileUrl
+        fullFilePath = fileObj.fileNameURL
+        fileObject = fileObj
+        status = special
+        if special {
+            saveButton.titleLabel?.text = "Del"
+            saveButton.removeTarget(self, action: #selector(FileCell.performDelegateAction), for: .touchUpInside)
+            saveButton.addTarget(self, action: #selector(FileCell.performDeleteAction), for: .touchUpInside)
+        } else {
+            saveButton.titleLabel?.text = "Save"
+            saveButton.removeTarget(self, action: #selector(FileCell.performDeleteAction), for: .touchUpInside)
+            saveButton.addTarget(self, action: #selector(FileCell.performDelegateAction), for: .touchUpInside)
+            
+        }
     }
+    
+    func performDelegateAction() {
+        guard delegate != nil else { return }
+        delegate?.pressedSave(fileObject: fileObject)
+    }
+    
+    func performDeleteAction() {
+        guard delegate != nil else { return }
+       delegate?.pressedDelete(fileObject: fileObject)
+    }
+}
+
+class ZipFileCell: FileCell {
+    
+    var delegateZip: ZipCellDelegate?
+    
+    @IBAction func savePressed(_ sender: Any) {
+        guard delegateZip != nil else { return }
+        
+        delegate?.pressedSave(fileObject: fileObject)
+    }
+    
 }
 
 class TextFileCell: FileCell {
@@ -62,15 +84,18 @@ class TextFileCell: FileCell {
     @IBOutlet weak var textFileLbl: UILabel!
     
     
-    func configureCell(fileObj: TXTFile) {
-        super.configureCell(fileObj: fileObj)
+    func configureCell(fileObj: TXTFile, inSpecialSection special: Bool) {
+        super.configureCell(fileObj: fileObj, inSpecialSection: special)
         if let text =  fileObj.fileText{
-
+            
             textFileLbl.text = text
         }
     }
     
-    @IBAction override func saveButtonTapped(_ sender: Any) {
+    
+    @IBAction func savePressed(_ sender: Any) {
+        
+        performDelegateAction()
         
     }
 }
@@ -78,37 +103,37 @@ class TextFileCell: FileCell {
 class ImageFileCell: FileCell {
     
     @IBOutlet weak var imgView: UIImageView!
- 
-    func configureCell(fileObj: PNGFile) {
-        super.configureCell(fileObj: fileObj)
+    
+    func configureCell(fileObj: PNGFile, inSpecialSection special: Bool) {
+        super.configureCell(fileObj: fileObj, inSpecialSection: special)
         
         if let im = fileObj.fileImage {
             imgView.image = im
         }
-
-    }
-    
-    @IBAction override func saveButtonTapped(_ sender: Any) {
         
     }
+    
+    @IBAction func savePressed(_ sender: Any) {
+        performDelegateAction()
+    }
+    
 }
 
 class PdfFileCell: FileCell, UITextViewDelegate {
     
     @IBOutlet weak var linkTextView: UITextView!
-    var fileObject: PDFFile?
     
     // MARK:- Delegate
     
-    var delegate: FileCellDelegate?
+    var delegatePDF: PDFCellDelegate?
     
     
-    func configureCell(fileObj: PDFFile) {
+    func configureCell(fileObj: PDFFile, inSpecialSection special: Bool) {
         
         fileObject = fileObj
-        super.configureCell(fileObj: fileObj)
+        super.configureCell(fileObj: fileObj, inSpecialSection: special)
         
-        if let text =  fileObj.fileLink {
+        if fileObj.fileLink != nil {
             linkTextView.delegate = self
             let link = "\(fileObj.fileName!).pdf"
             let theString = NSMutableAttributedString(string: link)
@@ -123,7 +148,7 @@ class PdfFileCell: FileCell, UITextViewDelegate {
             linkTextView.attributedText = theString
             
             theString.setAttributes(theAttribute, range: theRange)
-  
+            
             linkTextView.text = link
             linkTextView.sizeToFit()
         }
@@ -137,13 +162,14 @@ class PdfFileCell: FileCell, UITextViewDelegate {
             
             return false
         }
-
-        delegate?.didtap(onLink: (fileObject?.fileLink)!)
+        
+        delegatePDF?.didtap(onLink: ((fileObject as? PDFFile)?.fileLink)!)
         
         return true
     }
     
-    @IBAction override func saveButtonTapped(_ sender: Any) {
-        
+    @IBAction func savePressed(_ sender: Any) {
+        performDelegateAction()
     }
+    
 }

@@ -13,6 +13,12 @@ protocol MainInteractorProtocol {
 
     func makeSignOut()
     func makeSignIn()
-    func prepareAllData(onCompletion:@escaping (_ array: [FileObject]?) -> Void)
+    func prepareAllData(onCompletion:@escaping (_ array: [FileObject]?, _ savedObjects:[FileObject]?) -> Void)
+    
+}
+
+protocol MainInteractorUpdateProtocol {
+    
+    func updateData(newArray array: [FileObject]?, newSavedArray savedObjects:[FileObject]?)
     
 }

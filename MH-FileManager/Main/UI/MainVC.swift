@@ -9,22 +9,23 @@
 import VK_ios_sdk
 import UIKit
 
-class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableViewDataSource, MainInteractorUpdateProtocol {
     
     var navigation: MainWireFrame?
     var interactor: MainInteractor?
     var dataSource: [FileObject]?
-    var headerTitles = ["Files in Documents"]
+    var dataSourceSavedObjects: [FileObject] = []
+    var headerTitles = ["Files in Documents", "Files Saved"]
     
     @IBOutlet weak var zipQty: UILabel!
     @IBOutlet weak var txtQty: UILabel!
     @IBOutlet weak var pngQty: UILabel!
     @IBOutlet weak var pdfQty: UILabel!
     @IBOutlet weak var detailTableView: UITableView!
-   
+    
     
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         
         signInPressed()
@@ -35,11 +36,15 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
                        using:catchNotification)
         
         configureNavigationBar()
+        interactor?.delegate = self
         interactor?.prepareAllData(){
-            [weak self] (array: [FileObject]?) in
+            [weak self] (array: [FileObject]?, savedObjects:[FileObject]?) in
             if array != nil {
                 DispatchQueue.main.async {
                     self?.dataSource = array
+                    if let saved = savedObjects {
+                        self?.dataSourceSavedObjects = saved
+                    }
                     self?.detailTableView.delegate = self
                     self?.detailTableView.dataSource = self
                     self?.detailTableView.estimatedRowHeight = 80
@@ -55,11 +60,11 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
                 }
             }
         }
-
+        
     }
     
     func signInPressed() {
-
+        
         navigationItem.rightBarButtonItem?.title = "Sign out"
         navigationItem.rightBarButtonItem?.action = #selector(signOut)
         interactor?.networkManager.sdkInstance?.uiDelegate = self as VKSdkUIDelegate
@@ -81,15 +86,15 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     
     func configureNavigationBar() {
         
-            interactor?.networkManager.userInfo.getUserdataFromDefaults()
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
-            if let font = UIFont(name: "Menlo", size: 17) {
-                navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName:font], for: .normal)
-            }
-            navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        interactor?.networkManager.userInfo.getUserdataFromDefaults()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: #selector(signOut))
+        if let font = UIFont(name: "Menlo", size: 17) {
+            navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName:font], for: .normal)
+        }
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
     }
     
-
+    
     
     func setUserProfile() {
         let navbar = navigation?.navigationController?.navigationBar as! UserNavBar
@@ -106,23 +111,23 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
     }
     
     func signOut() {
-
-            interactor?.makeSignOut()
-            navigationItem.rightBarButtonItem?.title = "Sign in"
-            navigationItem.rightBarButtonItem?.action = #selector(signInPressed)
-            setDefaultProfile()
-
+        
+        interactor?.makeSignOut()
+        navigationItem.rightBarButtonItem?.title = "Sign in"
+        navigationItem.rightBarButtonItem?.action = #selector(signInPressed)
+        setDefaultProfile()
+        
     }
     
-    // Notifications
+    // MARK:- Notifications
     
     func catchNotification(notification:Notification) -> Void {
         navigationItem.rightBarButtonItem?.title = "Sign in"
         navigationItem.rightBarButtonItem?.tag = 5
         setDefaultProfile()
-       
+        
     }
-    // VKSDK UI Delegate
+    // MARK:- VKSDK UI Delegate
     
     public func vkSdkShouldPresent(_ controller: UIViewController!) {
         self.present(controller, animated: true, completion: nil)
@@ -133,47 +138,64 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         vc?.present(in: self)
     }
     
-    // UITableViewCell Delegate
- 
+    // MARK:- UITableViewCell Delegate
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        
+        if dataSourceSavedObjects.count > 0 {
+            return 2
+        }
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return (dataSource?.count)!
+        if section == 0 {
+            return (dataSource?.count)!
+        } else {
+            return dataSourceSavedObjects.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let fileInfo = dataSource?[indexPath.row] as! FileObject
         var cell: FileCell?
-
-        switch fileInfo.type {
-        case .Text:
+        var fileInfo: FileObject!
+        let sectionTwo = indexPath.section == 1 ? true : false
+        if indexPath.section == 1 {
+            fileInfo = dataSourceSavedObjects[indexPath.row]
+        } else {
+            fileInfo = dataSource?[indexPath.row]
+        }
+        guard let file = fileInfo else {
+            return cell!
+        }
+        switch file.type {
+        case FileType.Text:
             let cellText = tableView.dequeueReusableCell(withIdentifier: "TextFileCell", for: indexPath) as? TextFileCell
             let objText = fileInfo as! TXTFile
-            cellText?.configureCell(fileObj:objText)
+            cellText?.configureCell(fileObj:objText, inSpecialSection: sectionTwo)
             cell = cellText
-         case .PDF:
+        case .PDF:
             let obj = fileInfo as! PDFFile
             let cellText = tableView.dequeueReusableCell(withIdentifier: "PDFFileCell", for: indexPath) as? PdfFileCell
-            cellText?.configureCell(fileObj:obj)
-            cellText?.delegate = navigation!
+            cellText?.configureCell(fileObj:obj, inSpecialSection: sectionTwo)
+            cellText?.delegatePDF = navigation!
             cell = cellText
         case .PNG:
             let obj = fileInfo as! PNGFile
             let cellText = tableView.dequeueReusableCell(withIdentifier: "ImageFileCell", for: indexPath) as? ImageFileCell
-            cellText?.configureCell(fileObj:obj)
+            cellText?.configureCell(fileObj:obj, inSpecialSection: sectionTwo)
             cell = cellText
         case .ZIP:
-            cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as? FileCell
-            cell?.configureCell(fileObj:fileInfo)
-            cell?.delegateZip = self.interactor
+            let cellText = tableView.dequeueReusableCell(withIdentifier: "ZipCell", for: indexPath) as? ZipFileCell
+            cellText?.configureCell(fileObj:file, inSpecialSection: sectionTwo)
+            cellText?.delegateZip = self.interactor
+            cell = cellText
         default:
             break
         }
-       return cell!
+        cell?.delegate = self.interactor
+        
+        return cell!
+        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -184,13 +206,27 @@ class MainVC: UIViewController, VKSdkUIDelegate, UITableViewDelegate, UITableVie
         return headerTitles.count
     }
     
-    // Status Bar appearance
+    // MARK:- MainInteractorUpdateProtocol
+    
+    func updateData(newArray array: [FileObject]?, newSavedArray savedObjects:[FileObject]?) {
+        dataSource = array
+        if savedObjects != nil {
+            dataSourceSavedObjects = savedObjects!
+        }
+        detailTableView.reloadData()
+        zipQty.text = "\(DataSource.shared.zipFile)"
+        txtQty.text = "\(DataSource.shared.txtFile)"
+        pngQty.text = "\(DataSource.shared.pngFile)"
+        pdfQty.text = "\(DataSource.shared.pdfFile)"
+    }
+    
+    // MARK:- Status Bar appearance
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
-    // Deinit
+    // MARK:- Deinit
     
     deinit {
         print("****Main deinit****")

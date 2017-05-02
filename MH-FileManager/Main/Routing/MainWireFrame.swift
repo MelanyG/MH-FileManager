@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainWireFrame: MainWireFrameProtocol, FileCellDelegate {
+class MainWireFrame: MainWireFrameProtocol, PDFCellDelegate {
     
     var mainViewController: MainVC?
     var window: UIWindow?
@@ -41,6 +41,8 @@ class MainWireFrame: MainWireFrameProtocol, FileCellDelegate {
         pfdwireFrame.presentPDFVC(withLink: link)
         
     }
+    
+    // MARK:- PDFCellDelegate
     
     func didtap(onLink link: String) {
     

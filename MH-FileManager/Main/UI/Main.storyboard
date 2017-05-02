@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -167,14 +167,14 @@
                                         <rect key="frame" x="0.0" y="30" width="614.5" height="718"/>
                                         <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCell" rowHeight="150" id="XXR-0j-0dB" customClass="FileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="614.5" height="150"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ZipCell" rowHeight="150" id="XXR-0j-0dB" customClass="ZipFileCell" customModule="MH_FileManager" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="615" height="150"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XXR-0j-0dB" id="hZV-4t-nOR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="149.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="615" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSk-yF-2BT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSk-yF-2BT">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="3Gu-2F-a2K"/>
@@ -190,7 +190,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SjQ-vx-OgB">
-                                                            <rect key="frame" x="544.5" y="54.5" width="60" height="95"/>
+                                                            <rect key="frame" x="544.5" y="54.5" width="60" height="75"/>
                                                             <color key="backgroundColor" red="0.35294117650000001" green="0.4941176471" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="5Ll-JS-GPA"/>
@@ -205,7 +205,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="saveButtonTapped:" destination="XXR-0j-0dB" eventType="touchUpInside" id="DH5-dp-j9S"/>
+                                                                <action selector="savePressed:" destination="XXR-0j-0dB" eventType="touchUpInside" id="ckq-A6-mtL"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -217,23 +217,24 @@
                                                         <constraint firstAttribute="trailingMargin" secondItem="cSk-yF-2BT" secondAttribute="trailing" id="dE6-7j-COX"/>
                                                         <constraint firstItem="SjQ-vx-OgB" firstAttribute="top" secondItem="cSk-yF-2BT" secondAttribute="bottom" constant="30" id="dkz-zc-isB"/>
                                                         <constraint firstItem="cSk-yF-2BT" firstAttribute="top" secondItem="hZV-4t-nOR" secondAttribute="topMargin" id="eqA-Ig-iD1"/>
-                                                        <constraint firstAttribute="bottom" secondItem="SjQ-vx-OgB" secondAttribute="bottom" id="mI6-ZW-KAo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SjQ-vx-OgB" secondAttribute="bottom" constant="20" id="mI6-ZW-KAo"/>
                                                         <constraint firstItem="cSk-yF-2BT" firstAttribute="leading" secondItem="1ua-Pa-YjB" secondAttribute="trailing" constant="20" id="o9e-bQ-mKm"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
                                                     <outlet property="fileName" destination="1ua-Pa-YjB" id="xm6-Qv-HpN"/>
                                                     <outlet property="fileSize" destination="cSk-yF-2BT" id="ndb-Wl-TRI"/>
+                                                    <outlet property="saveButton" destination="SjQ-vx-OgB" id="gyx-WX-aGw"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextFileCell" rowHeight="235" id="FtR-o8-a3O" customClass="TextFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="178" width="614.5" height="235"/>
+                                                <rect key="frame" x="0.0" y="178" width="615" height="235"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FtR-o8-a3O" id="mCR-3z-4FS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="234.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="615" height="235"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zD-AR-dFQ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zD-AR-dFQ">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="KBk-hK-EuO"/>
@@ -270,7 +271,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="saveButtonTapped:" destination="FtR-o8-a3O" eventType="touchUpInside" id="ZKw-xu-wbZ"/>
+                                                                <action selector="savePressed:" destination="FtR-o8-a3O" eventType="touchUpInside" id="B6E-Ep-NyQ"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -291,17 +292,18 @@
                                                 <connections>
                                                     <outlet property="fileName" destination="xmg-dr-cS8" id="jN3-qP-ul6"/>
                                                     <outlet property="fileSize" destination="2zD-AR-dFQ" id="0m9-hF-fGF"/>
+                                                    <outlet property="saveButton" destination="9Fj-9p-tm5" id="43R-HF-OkG"/>
                                                     <outlet property="textFileLbl" destination="Qad-LG-Xqf" id="cym-6y-v0x"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageFileCell" rowHeight="163" id="f1E-0C-lKU" customClass="ImageFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="413" width="614.5" height="163"/>
+                                                <rect key="frame" x="0.0" y="413" width="615" height="163"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f1E-0C-lKU" id="3GK-KE-BBg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="162.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="615" height="163"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me2-SK-VEG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me2-SK-VEG">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="LbP-aL-lOj"/>
@@ -339,7 +341,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="saveButtonTapped:" destination="f1E-0C-lKU" eventType="touchUpInside" id="4lI-iG-ngg"/>
+                                                                <action selector="savePressed:" destination="f1E-0C-lKU" eventType="touchUpInside" id="XpK-IX-Nfa"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -360,16 +362,17 @@
                                                     <outlet property="fileName" destination="w6H-Hs-3Wk" id="vI3-8M-L2H"/>
                                                     <outlet property="fileSize" destination="Me2-SK-VEG" id="FaR-ce-xGp"/>
                                                     <outlet property="imgView" destination="H8k-5J-WYN" id="Zhu-aA-rab"/>
+                                                    <outlet property="saveButton" destination="kS1-aT-1Wj" id="0Pa-ld-tll"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PDFFileCell" rowHeight="235" id="75X-mz-sTa" customClass="PdfFileCell" customModule="MH_FileManager" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="576" width="614.5" height="235"/>
+                                                <rect key="frame" x="0.0" y="576" width="615" height="235"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75X-mz-sTa" id="Yq4-P9-Lzr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="614.5" height="234.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="615" height="235"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Au-oIZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oY-Au-oIZ">
                                                             <rect key="frame" x="546.5" y="8" width="60" height="16.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="CcE-a4-QWf"/>
@@ -400,7 +403,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="saveButtonTapped:" destination="75X-mz-sTa" eventType="touchUpInside" id="8HG-Hn-P9j"/>
+                                                                <action selector="savePressed:" destination="75X-mz-sTa" eventType="touchUpInside" id="Efb-PL-nIR"/>
                                                             </connections>
                                                         </button>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lbl" translatesAutoresizingMaskIntoConstraints="NO" id="E7P-MZ-vjt">
@@ -430,6 +433,7 @@
                                                     <outlet property="fileName" destination="Suw-bZ-ftx" id="Xx6-xk-AMA"/>
                                                     <outlet property="fileSize" destination="6oY-Au-oIZ" id="rje-DR-vxK"/>
                                                     <outlet property="linkTextView" destination="E7P-MZ-vjt" id="c7Q-9C-62H"/>
+                                                    <outlet property="saveButton" destination="ccz-SB-2Oi" id="shT-16-OLd"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
