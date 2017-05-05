@@ -45,11 +45,12 @@ class FileCell: UITableViewCell {
         fileObject = fileObj
         status = special
         if special {
-            saveButton.titleLabel?.text = "Del"
+            saveButton.setTitle("Del", for: UIControlState.normal)
             saveButton.removeTarget(self, action: #selector(FileCell.performDelegateAction), for: .touchUpInside)
             saveButton.addTarget(self, action: #selector(FileCell.performDeleteAction), for: .touchUpInside)
         } else {
-            saveButton.titleLabel?.text = "Save"
+
+            saveButton.setTitle("Save", for: UIControlState.normal)
             saveButton.removeTarget(self, action: #selector(FileCell.performDeleteAction), for: .touchUpInside)
             saveButton.addTarget(self, action: #selector(FileCell.performDelegateAction), for: .touchUpInside)
             
